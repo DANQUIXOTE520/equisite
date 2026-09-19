@@ -237,3 +237,13 @@
 01:57:51 INFO    export_docx                已导出 论文稿件\中文稿.docx
     公式 26 个（其中 26 个转为 Word 原生公式对象）
     表格已转为三线表
+02:37:33 INFO    export_docx                公式转换已启用，样式表: C:\Program Files\Microsoft Office\root\Office16\MML2OMML.XSL
+02:37:33 INFO    export_docx                稿件语言: 英文
+02:37:37 INFO    export_docx                已导出 论文稿件\manuscript_draft.docx
+    公式 26 个（其中 26 个转为 Word 原生公式对象）
+    表格已转为三线表
+02:37:38 INFO    export_docx                公式转换已启用，样式表: C:\Program Files\Microsoft Office\root\Office16\MML2OMML.XSL
+02:37:38 INFO    export_docx                稿件语言: 中文
+02:37:42 INFO    export_docx                已导出 论文稿件\中文稿.docx
+    公式 26 个（其中 26 个转为 Word 原生公式对象）
+    表格已转为三线表

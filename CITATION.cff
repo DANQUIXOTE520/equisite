@@ -42,10 +42,10 @@ keywords:
   - GIS
   - Chengdu
 
-# GitHub reads this file for the "Cite this repository" button, and Zenodo reads it when
-# minting the DOI. Uncomment `doi` once the Zenodo release has been published.
+# GitHub reads this file for the "Cite this repository" button. Zenodo does NOT use it —
+# see .zenodo.json, which Zenodo prefers and this file cannot override.
 repository-code: "https://github.com/DANQUIXOTE520/equisite"
-# doi: "10.5281/zenodo.XXXXXXX"
+doi: "10.5281/zenodo.22848616"
 
 references:
   # On acceptance, change status to `published`, add volume/pages/doi, and consider

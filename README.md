@@ -12,7 +12,9 @@ structures — rooftops avoid land acquisition but carry high fixed costs, groun
 reverse — and are modelled as two distinct facility classes inside one optimisation.
 
 Companion paper: *Equity-aware multi-objective siting of urban air mobility vertiports*
-(under review). Repository DOI: pending.
+(under review).
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22848615.svg)](https://doi.org/10.5281/zenodo.22848615)
 
 A Chinese version of this file is at [`README.zh-CN.md`](README.zh-CN.md).
 
@@ -452,11 +454,17 @@ shared. Without a token the page shows an explicit message and a link, not a bla
   Sichuan, China
 * Affiliation ROR: <https://ror.org/01xyb1v19>
 * ORCID: <https://orcid.org/0009-0007-3291-8296>
-* Corresponding author, funding and repository DOI: to be completed
+* Corresponding author and funding: to be completed
+* **DOI (this version, v1.0.0): <https://doi.org/10.5281/zenodo.22848616>**
+* Concept DOI, always resolving to the newest version:
+  <https://doi.org/10.5281/zenodo.22848615>
 
-Machine-readable citation metadata is in [`CITATION.cff`](CITATION.cff) — GitHub renders it
-as the "Cite this repository" button, and Zenodo reads it when minting the DOI. If you use
-this code, please cite the paper:
+Citation metadata appears in two files, and they do different jobs.
+[`CITATION.cff`](CITATION.cff) drives GitHub's "Cite this repository" button.
+[`.zenodo.json`](.zenodo.json) is what Zenodo actually reads — **if both are present, Zenodo
+ignores `CITATION.cff` entirely**, so the deposit record comes from `.zenodo.json`.
+
+If you use this code, please cite the paper:
 
 ```bibtex
 @article{long2026equisite,
@@ -473,7 +481,9 @@ this code, please cite the paper:
   title  = {EQUISITE: equity-aware vertiport siting for urban air mobility},
   author = {Long, Mohan},
   year   = {2026},
-  note   = {Software, version 1.0.0. DOI pending}
+  version = {1.0.0},
+  doi    = {10.5281/zenodo.22848616},
+  url    = {https://github.com/DANQUIXOTE520/equisite}
 }
 ```
 
