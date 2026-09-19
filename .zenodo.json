@@ -1,0 +1,29 @@
+{
+  "title": "EQUISITE: equity-aware vertiport siting for urban air mobility",
+  "description": "<p>EQUISITE (<strong>EQUI</strong>ty-aware <strong>SITE</strong> selection) is the code and data pipeline behind a study on where to place urban air mobility vertiports in Chengdu, China. The name is not an initialism of the four stages.</p><p>The problem it addresses is narrow but awkward. Vertiport siting studies optimise coverage or cost, and treat equity as a post-hoc check on whatever the optimiser produced. Here the access time of the worst-off income group is one of the four objectives the search actually solves for. Separately, rooftop and ground vertiports have opposite cost structures and are modelled as two distinct facility classes inside one optimisation.</p><p>The pipeline runs in four stages: (1) GIS candidate screening from OpenStreetMap, satellite-derived building heights and terrain, separately for rooftops and ground parcels; (2) K-means demand stratification, with population redistributed onto buildings and converted to trips by a mode-choice model; (3) exact 0-1 integer programming for the policy-constrained cases; (4) NSGA-II search over four objectives &mdash; unserved demand, total access time, worst-group access time, and capital cost.</p><p>The archive contains the full pipeline, the Chengdu configuration, every output table and run log cited in the paper, the single-objective baselines (p-median, p-center, MCLP, set covering), and the diagnostic scripts used to locate three silent failure modes in the optimiser that produced plausible-looking results without raising an error.</p><p>Two limitations are documented rather than buried: income is a proxy for economic activity, not measured income, and access time is free-flow Euclidean rather than routed. Third-party input data (OSM, WorldPop, CNBH-10 m, Copernicus DEM, NPP-VIIRS) is downloaded by the code, not redistributed here.</p>",
+  "creators": [
+    {
+      "name": "Long, Mohan",
+      "affiliation": "Civil Aviation Flight University of China",
+      "orcid": "0009-0007-3291-8296"
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "version": "1.0.0",
+  "publication_date": "2026-09-20",
+  "language": "eng",
+  "keywords": [
+    "eVTOL",
+    "urban air mobility",
+    "vertiport siting",
+    "facility location",
+    "equity",
+    "multi-objective optimisation",
+    "NSGA-II",
+    "integer programming",
+    "GIS",
+    "Chengdu"
+  ]
+}
