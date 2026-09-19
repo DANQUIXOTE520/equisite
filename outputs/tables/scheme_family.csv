@@ -1,0 +1,5 @@
+name,objective,n_sites,status,solver_gap,solve_time_s,total_access_time,unserved_demand,demand_coverage_pct,total_cost_cny,mean_access_time_min,worst_group_access_time_min,worst_group_access_time_core_min,core_n_cells,core_demand_coverage_pct,core_total_access_time
+最低成本,min_cost,10,Optimal,,1.2,461307.0134,2164.6472,95.6999,321100113.5368,9.9415,10.0382,9.7994,1008,100.0,361405.5197
+最短接驳（距离最近）,min_total_time,10,Optimal,,88.43,453744.0917,1910.1915,96.2053,453021459.809,9.7933,9.7503,9.6882,1008,100.0,352707.8539
+最大覆盖,max_coverage,10,Optimal,,19.98,496436.2396,781.7436,98.447,468114561.3457,10.2023,10.3593,10.3534,1008,100.0,383404.0228
+最均衡体验,min_worst_case,10,Feasible,,741.2,455479.2247,2027.264,95.9728,499011540.695,9.9071,10.0866,9.3411,1008,100.0,353266.181

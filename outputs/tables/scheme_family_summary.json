@@ -1,0 +1,40 @@
+{
+  "n_sites": 10,
+  "data_mode": "real",
+  "n_candidates": 1315,
+  "n_demand_cells": 2519,
+  "family_size": 4,
+  "fixed_cardinality_verified": true,
+  "domination": {
+    "n_family": 4,
+    "n_family_dominated_by_hybrid": 1,
+    "pct_family_dominated_by_hybrid": 25.0,
+    "n_hybrid_front_points": 330
+  },
+  "comparison": [
+    {
+      "approach": "Scheme family (N=10)",
+      "n_solutions": 4,
+      "hypervolume": 2.2281192084863857e+19,
+      "min_cost_1e8": 3.2110011353677685,
+      "min_unserved": 781.7436069245668,
+      "min_inequity": 9.75034825029173
+    },
+    {
+      "approach": "Fixed-N GA breeding",
+      "n_solutions": 330,
+      "hypervolume": 3.167291501267639e+19,
+      "min_cost_1e8": 2.5800384410132944,
+      "min_unserved": 781.7436069245668,
+      "min_inequity": 9.422209725108312
+    },
+    {
+      "approach": "Free-cardinality NSGA-II",
+      "n_solutions": 253,
+      "hypervolume": 1.689310208181361e+20,
+      "min_cost_1e8": 3.2110011353677685,
+      "min_unserved": 0.0,
+      "min_inequity": 5.962386956850856
+    }
+  ]
+}

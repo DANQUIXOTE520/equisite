@@ -1,0 +1,64 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying paper (see references below)."
+
+title: "EQUISITE: equity-aware vertiport siting for urban air mobility"
+
+abstract: >-
+  EQUISITE (EQUIty-aware SITE selection) is a four-stage framework for siting urban air
+  mobility vertiports, applied to Chengdu, China. Stage 1 screens candidate sites from
+  OpenStreetMap, satellite-derived building heights and terrain, separately for rooftops
+  and for ground parcels, which have opposite cost structures. Stage 2 stratifies demand:
+  population is redistributed onto buildings, clustered by an income proxy, and converted
+  to trips by a mode-choice model. Stage 3 solves policy-constrained cases exactly, as
+  0-1 integer programs. Stage 4 searches the unconstrained trade-off surface with a
+  from-scratch NSGA-II over four objectives: unserved demand, total access time,
+  worst-group access time, and capital cost. The equity objective, the mean access time
+  of the worst-off income group, is optimised directly rather than checked after the
+  fact, and rooftop and ground vertiports are modelled as distinct facility classes
+  within one optimisation.
+
+type: software
+
+authors:
+  - family-names: Long
+    given-names: Mohan
+    affiliation: "Civil Aviation Flight University of China, Guanghan 618307, Sichuan, China"
+    orcid: "https://orcid.org/0009-0007-3291-8296"
+
+license: MIT
+
+version: 1.0.0
+date-released: "2026-09-20"
+
+keywords:
+  - eVTOL
+  - urban air mobility
+  - vertiport siting
+  - facility location
+  - equity
+  - multi-objective optimisation
+  - NSGA-II
+  - integer programming
+  - GIS
+  - Chengdu
+
+# GitHub reads this file for the "Cite this repository" button, and Zenodo reads it when
+# minting the DOI. Uncomment `doi` once the Zenodo release has been published.
+repository-code: "https://github.com/DANQUIXOTE520/equisite"
+# doi: "10.5281/zenodo.XXXXXXX"
+
+references:
+  # On acceptance, change status to `published`, add volume/pages/doi, and consider
+  # promoting this entry to `preferred-citation` so the paper is cited rather than the code.
+  - type: article
+    title: >-
+      Equity-aware multi-objective siting of urban air mobility vertiports: an integrated
+      GIS, demand-stratification and NSGA-II framework with application to Chengdu, China
+    authors:
+      - family-names: Long
+        given-names: Mohan
+        affiliation: "Civil Aviation Flight University of China"
+        orcid: "https://orcid.org/0009-0007-3291-8296"
+    journal: "Computers, Environment and Urban Systems"
+    year: 2026
+    status: submitted

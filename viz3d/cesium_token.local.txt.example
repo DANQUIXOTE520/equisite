@@ -1,0 +1,4 @@
+# 在此写入你自己的 Cesium ion access token（单独一行，无引号）。
+# 创建：https://ion.cesium.com/tokens （免费）
+# 写好后执行：python scripts/export_3d.py --token-only
+# 该文件与生成的 cesium_token.js 都不应公开分享。

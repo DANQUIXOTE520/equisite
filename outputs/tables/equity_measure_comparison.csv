@@ -1,0 +1,3 @@
+direction,count,total,pct,pct_note
+group_mean 被 individual_max 支配的解数,690,1000,69.0,统一口径（group_mean 目标空间，n=10 次运行）
+individual_max 被 group_mean 支配的解数,545,1000,54.5,统一口径（group_mean 目标空间，n=10 次运行）

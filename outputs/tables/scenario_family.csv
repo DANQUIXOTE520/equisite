@@ -1,0 +1,5 @@
+name,objective,n_sites,status,solve_time_s,total_access_time,unserved_demand,demand_coverage_pct,total_cost_cny,mean_access_time_min,worst_group_access_time_min,scenario_param,scenario_param_key
+预算约束型,budget,15,Optimal,4.16,479014.4243,7.6915,99.9847,499476467.5958,9.6874,9.7851,500000000.0,budget_cny
+服务标准约束型,access_standard,28,Optimal,0.75,366830.8812,419.4351,99.1668,1301289173.771,8.2913,8.2947,10.0,radius_min
+设施规模约束型,facility_cap,15,Optimal,6.99,477450.989,0.0,100.0,762075291.5536,9.5815,9.844,15.0,n_max
+公平约束型,equity_floor,13,Optimal,62.61,481019.8606,653.9333,98.7009,367541519.2566,9.9607,10.0749,0.95,alpha

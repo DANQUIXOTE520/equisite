@@ -1,0 +1,42 @@
+02:02:25 INFO    export_archive             归档目录: 论文稿件\数据
+02:02:25 INFO    export_archive               配置快照: config_used.yaml（0 项覆盖）
+02:02:26 INFO    export_archive               已归档 30 个产物文件
+02:02:27 INFO    export_archive               环境清单: ENVIRONMENT.txt
+02:02:27 INFO    export_archive               说明文件: README.md
+02:02:27 INFO    export_archive             
+02:02:27 INFO    export_archive             归档完成：30 个文件 -> 论文稿件\数据
+05:25:33 INFO    export_archive             归档目录: 论文稿件\数据
+05:25:33 INFO    export_archive               配置快照: config_used.yaml（0 项覆盖）
+05:25:33 INFO    export_archive               已归档 35 个产物文件
+05:25:34 INFO    export_archive               环境清单: ENVIRONMENT.txt
+05:25:34 INFO    export_archive               说明文件: README.md
+05:25:34 INFO    export_archive             
+05:25:34 INFO    export_archive             归档完成：35 个文件 -> 论文稿件\数据
+06:53:00 INFO    export_archive             归档目录: 论文稿件\数据
+06:53:00 INFO    export_archive               配置快照: config_used.yaml（0 项覆盖）
+06:53:00 INFO    export_archive               已归档 36 个产物文件
+06:53:01 INFO    export_archive               环境清单: ENVIRONMENT.txt
+06:53:01 INFO    export_archive               说明文件: README.md
+06:53:01 INFO    export_archive             
+06:53:01 INFO    export_archive             归档完成：36 个文件 -> 论文稿件\数据
+11:43:38 INFO    export_archive             归档目录: 论文稿件\数据
+11:43:38 INFO    export_archive               配置快照: config_used.yaml（0 项覆盖）
+11:43:38 INFO    export_archive               已归档 37 个产物文件
+11:43:41 INFO    export_archive               环境清单: ENVIRONMENT.txt
+11:43:41 INFO    export_archive               说明文件: README.md
+11:43:41 INFO    export_archive             
+11:43:41 INFO    export_archive             归档完成：37 个文件 -> 论文稿件\数据
+01:27:08 INFO    export_archive             归档目录: 论文稿件\数据
+01:27:08 INFO    export_archive               配置快照: config_used.yaml（0 项覆盖）
+01:27:08 INFO    export_archive               已归档 38 个产物文件
+01:27:11 INFO    export_archive               环境清单: ENVIRONMENT.txt
+01:27:11 INFO    export_archive               说明文件: README.md
+01:27:11 INFO    export_archive             
+01:27:11 INFO    export_archive             归档完成：38 个文件 -> 论文稿件\数据
+01:30:27 INFO    export_archive             归档目录: 论文稿件\数据
+01:30:27 INFO    export_archive               配置快照: config_used.yaml（0 项覆盖）
+01:30:27 INFO    export_archive               已归档 38 个产物文件
+01:30:28 INFO    export_archive               环境清单: ENVIRONMENT.txt
+01:30:28 INFO    export_archive               说明文件: README.md
+01:30:28 INFO    export_archive             
+01:30:28 INFO    export_archive             归档完成：38 个文件 -> 论文稿件\数据

@@ -1,0 +1,253 @@
+02:15:30 INFO    encoding_ablation          ==========================================================================
+02:15:30 INFO    encoding_ablation          编码消融：mask vs integer
+02:15:30 INFO    encoding_ablation            runs=10  pop=100  gen=100  seed=20240501  data=real
+02:15:30 INFO    encoding_ablation          ==========================================================================
+02:15:30 INFO    evtol_siting.pipeline      ============================================================
+02:15:30 INFO    evtol_siting.pipeline      阶段一：基于 GIS 的候选起降场筛选
+02:15:30 INFO    evtol_siting.pipeline      ============================================================
+02:15:30 INFO    evtol_siting.pipeline      解析 PBF 提取包: sichuan-latest.osm.pbf
+02:15:38 INFO    evtol_siting.data.pbf        已扫描 200000 个候选要素…
+02:15:45 INFO    evtol_siting.data.pbf        已扫描 400000 个候选要素…
+02:15:53 INFO    evtol_siting.data.pbf        已扫描 600000 个候选要素…
+02:16:00 INFO    evtol_siting.data.pbf        已扫描 800000 个候选要素…
+02:16:08 INFO    evtol_siting.data.pbf        已扫描 1000000 个候选要素…
+02:16:16 INFO    evtol_siting.data.pbf        已扫描 1200000 个候选要素…
+02:16:20 INFO    evtol_siting.data.pbf        buildings          70006 个要素
+02:16:20 INFO    evtol_siting.data.pbf        poi                 8159 个要素
+02:16:20 INFO    evtol_siting.data.pbf        roads              42272 个要素
+02:16:20 INFO    evtol_siting.data.pbf        landuse             8605 个要素
+02:16:21 INFO    evtol_siting.data.pbf        water               3671 个要素
+02:16:21 INFO    evtol_siting.data.pbf        airports            1365 个要素
+02:16:21 INFO    evtol_siting.data.pbf      PBF 解析完成（扫描 1271295 个候选要素，装配并保留 79825 个面要素，丢弃 0 个非法几何，输出 6 个图层）
+02:16:21 INFO    evtol_siting.data.rasters  建筑高度栅格已存在: evtol_siting\data\raw\height\chengdu_building_height_10m.tif
+02:16:23 INFO    evtol_siting.data.heights  高度栅格提供了 49323 栋建筑的高度（覆盖 70.5%）
+02:16:23 INFO    evtol_siting.data.heights  分位数回归填补了 14740 栋建筑的高度（中位数 18.6 m）
+02:16:23 INFO    evtol_siting.data.heights  高度融合结果（共 70006 栋）:
+    raster_height     70.5%
+    imputed           21.1%
+    osm_levels         7.3%
+    osm_height         1.2%
+02:16:23 INFO    evtol_siting.data.heights  各来源的栋数与高度分布（论文 §3.3 引用这些数）:
+                   n  median  mean   std
+src                                     
+raster_height  49323   18.65 19.44  5.25
+imputed        14740   18.60 18.42  1.34
+osm_levels      5100   14.10 29.66 34.60
+osm_height       843   20.00 34.44 47.47
+02:16:23 INFO    evtol_siting.data.heights      合计 70006 栋（逐来源栋数之和必须等于此数）
+02:16:24 INFO    evtol_siting.data.heights  §3.3 诊断（同口径，均为 CNBH 栅格实测）: 带 OSM 高度标签 5352 栋，中位数 23.0 m，均值 22.9 m
+02:16:24 INFO    evtol_siting.data.heights  §3.3 诊断（同口径，均为 CNBH 栅格实测）: 无 OSM 高度标签 49323 栋，中位数 18.6 m，均值 19.4 m
+02:16:24 INFO    evtol_siting.data.heights      （两个子集的中位数之差即 §3.3 所述的选择偏差；差值方向应为正值——标签偏向更高建筑）
+02:16:24 INFO    evtol_siting.data.heights      有标签覆盖率: 8.5% -> 融合后覆盖率: 100.0%
+02:16:24 INFO    evtol_siting.data.rasters  人口栅格已存在: evtol_siting\data\raw\population\chengdu_population_100m.tif
+02:16:24 INFO    evtol_siting.data.rasters  收入代理数据已存在: evtol_siting\data\raw\income\chengdu_income_proxy.gpkg
+02:16:24 INFO    evtol_siting.pipeline      收入代理已载入: 6716 个点（EPSG:4326）
+02:16:24 INFO    evtol_siting.data.rasters  DEM 已存在: evtol_siting\data\raw\dem\chengdu_dem_30m.tif
+02:16:27 INFO    evtol_siting.data.rasters  坡度栅格已生成: evtol_siting\data\interim\chengdu_slope.tif
+02:16:27 INFO    evtol_siting.geo           栅格化完成: 单元边长 500 m, 单元数 2519, 覆盖 629.8 km²
+02:16:28 INFO    evtol_siting.stage1_candidates 屋顶型筛选: 1517 / 70006 栋建筑满足 h>=20m 且 A_roof>=1600m² (2.17%)
+02:16:28 INFO    evtol_siting.stage1_candidates   排除 用地类型: 35 个单元（1.4%）
+02:16:28 INFO    evtol_siting.stage1_candidates   排除 水域: 62 个单元（2.5%）
+02:16:28 INFO    evtol_siting.stage1_candidates   建筑覆盖率判据 (max=0.55): 剔除 6 个单元（保留 2416）；覆盖率中位数 0.05
+02:16:28 INFO    evtol_siting.stage1_candidates 坡度判据: 2405 / 2416 单元满足 slope<=15° (剔除 11)
+02:16:28 INFO    evtol_siting.stage1_candidates 地面型筛选: 2405 个候选（用地排除 -114，坡度排除后）
+02:16:28 INFO    evtol_siting.stage1_candidates 地面型候选已按路网可达性重新评分（中位距离 91 m）
+02:16:28 INFO    evtol_siting.stage1_candidates 已为 1517 个缺少 cell_id 的候选（屋顶型）补齐所属栅格单元（补齐后 3818/3922 有 cell_id）
+02:16:28 INFO    evtol_siting.stage1_candidates   104 个候选落在栅格之外，改用坐标分桶作为 cell_id
+02:16:28 INFO    evtol_siting.stage1_candidates   口径 all_aeroway：1299 个非直升要素全部按运输机场处理
+02:16:28 INFO    evtol_siting.stage1_candidates   机场净空区（含民用） (r=4000m): 剔除 1498 个候选（占 38.2%）
+02:16:28 INFO    evtol_siting.stage1_candidates   既有直升机场 (r=1000m): 剔除 179 个候选（占 4.6%）
+02:16:28 INFO    evtol_siting.stage1_candidates 安全排除后剩余 2381 个候选（原有 3922）
+02:16:28 INFO    evtol_siting.stage1_candidates   [ground] 类别内稀释: 1560 -> 1560
+02:16:28 INFO    evtol_siting.stage1_candidates   [rooftop] 类别内稀释: 745 -> 269
+02:16:28 INFO    evtol_siting.stage1_candidates 密度稀释 (c_min=500m, 每栅格<=3): 2381 -> 1315 个候选 （配额 -76，类别内间距 -476，跨类别冲突 -514）；构成: {'ground': 1051, 'rooftop': 264}
+02:16:28 INFO    evtol_siting.stage1_candidates 阶段一完成: 1315 个候选起降场（屋顶型 264，地面型 1051）
+02:16:28 INFO    evtol_siting.pipeline      ============================================================
+02:16:28 INFO    evtol_siting.pipeline      阶段二：K-means 人群分类与需求空间化
+02:16:28 INFO    evtol_siting.pipeline      ============================================================
+02:16:28 INFO    evtol_siting.data.dasymetric 人口栅格分辨率 80 m 细于需求格网 500 m —— 分区求和已是正确的格网人口总量，**体积重分配在此不产生作用**，直接使用分区求和。（体积权重的价值在于把人口摊到建筑上做更细的分析，需 force=True）
+02:16:28 WARNING evtol_siting.data.dasymetric 退化为按分区求和（假设人口在格网内均匀分布）
+02:16:34 INFO    evtol_siting.stage2_demand 人口分配方式对比（论文 Table 用）:
+    method  total_population  n_nonzero_cells  mean_per_cell  std_per_cell       cv     max_cell  top1pct_share     gini
+dasymetric      7.712263e+06             2517    3061.636823   2504.238782 0.817941 12360.637527       0.032418 0.458119
+   uniform      7.712263e+06             2517    3061.636823   2504.238782 0.817941 12360.637527       0.032418 0.458119
+02:16:34 INFO    evtol_siting.stage2_demand 人口: 合计 7712263 人，单元中位数 2567 人（来源: zonal_sum）
+02:16:34 INFO    evtol_siting.stage2_demand 收入代理(RWI): 范围 [4.28, 94.31]，单元均值 28.593
+02:16:34 INFO    evtol_siting.stage2_demand POI: 研究区内 7442 个，单元密度中位数 0 个/km²
+02:16:38 INFO    evtol_siting.stage2_demand K 选择 (silhouette): K=5，得分 0.4738，各 K 得分 {3: 0.4715, 4: 0.4488, 5: 0.4738, 6: 0.4288, 7: 0.4338, 8: 0.4344}
+02:16:38 INFO    evtol_siting.choice_model  收入阶梯（K=5）: 1,877  2,956  4,049  5,546  8,736
+02:16:38 INFO    evtol_siting.choice_model  时间价值: 5.4  8.5  11.6  15.9  25.1 元/小时（对应月收入 1,877  2,956  4,049  5,546  8,736）
+02:16:38 INFO    evtol_siting.choice_model  时间价值: 1.1  1.3  1.4  1.7  1.9  2.2  2.5  2.9  3.3  3.8  4.4  5.0  5.8  6.6  7.6  8.8  10.1  11.6  13.3  15.3  17.6  20.2  23.2  26.7 元/小时（对应月收入 379  435  500  575  661  760  873  1,003  1,153  1,325  1,523  1,751  2,012  2,312  2,657  3,054  3,510  4,034  4,636  5,328  6,124  7,038  8,088  9,296）
+02:16:38 INFO    evtol_siting.choice_model  时间价值: 1.7  2.0  2.3  2.6  3.0  3.4  4.0  4.5  5.2  6.0  6.9  7.9  9.1  10.5  12.0  13.8  15.9  18.3  21.0  24.1  27.7  31.9  36.6  42.1 元/小时（对应月收入 597  686  788  906  1,041  1,197  1,375  1,581  1,816  2,088  2,399  2,757  3,169  3,642  4,186  4,810  5,529  6,354  7,302  8,392  9,645  11,085  12,739  14,641）
+02:16:38 INFO    evtol_siting.choice_model  时间价值: 2.3  2.7  3.1  3.6  4.1  4.7  5.4  6.2  7.1  8.2  9.4  10.9  12.5  14.3  16.5  18.9  21.8  25.0  28.7  33.0  38.0  43.6  50.1  57.6 元/小时（对应月收入 817  940  1,080  1,241  1,426  1,639  1,884  2,165  2,488  2,859  3,286  3,777  4,341  4,989  5,733  6,589  7,573  8,703  10,002  11,495  13,211  15,183  17,450  20,055）
+02:16:38 INFO    evtol_siting.choice_model  时间价值: 3.2  3.7  4.3  4.9  5.6  6.5  7.4  8.5  9.8  11.3  12.9  14.9  17.1  19.6  22.6  25.9  29.8  34.3  39.4  45.2  52.0  59.8  68.7  78.9 元/小时（对应月收入 1,120  1,287  1,479  1,700  1,954  2,245  2,580  2,965  3,408  3,917  4,502  5,173  5,946  6,833  7,853  9,026  10,373  11,921  13,701  15,746  18,097  20,798  23,902  27,470）
+02:16:38 INFO    evtol_siting.choice_model  时间价值: 5.1  5.8  6.7  7.7  8.8  10.2  11.7  13.4  15.4  17.7  20.4  23.4  26.9  30.9  35.5  40.9  46.9  54.0  62.0  71.3  81.9  94.1  108.2  124.3 元/小时（对应月收入 1,764  2,027  2,330  2,677  3,077  3,536  4,064  4,671  5,368  6,169  7,090  8,149  9,365  10,763  12,369  14,216  16,338  18,777  21,580  24,801  28,503  32,758  37,648  43,267）
+02:16:38 INFO    evtol_siting.choice_model  选择模型 [区域内积分（σ_within=0.4）]: 出行 15 km（单点），地面 55 分钟 / 57 元，eVTOL 24 分钟 / 130 元，节省 31 分钟；采用概率 0.0565–0.0865（类间比 1.53）
+02:16:38 INFO    evtol_siting.choice_model  各类人群采用概率:
+ cluster  monthly_income_cny  vot_cny_per_h  p_evtol  demand_rate
+       0              1877.0           5.39  0.05645     0.005645
+       1              2956.0           8.49  0.06033     0.006033
+       2              4049.0          11.64  0.06455     0.006455
+       3              5546.0          15.94  0.07085     0.007085
+       4              8736.0          25.10  0.08655     0.008655
+02:16:38 INFO    evtol_siting.stage2_demand K-means 聚类完成: K=5，总需求 50336 次/日，总人口 7712263 人
+02:16:38 INFO    evtol_siting.stage2_demand 类画像:
+ cluster  n_cells   population  income_mean  poi_density_mean  trip_rate  monthly_income_cny  vot_cny_per_h  p_evtol  demand_trips_per_day k_selection
+       0      912 1.275040e+06    15.460313          1.276316   0.005645              1877.0           5.39  0.05645           7197.602655  silhouette
+       1      918 2.960455e+06    31.655382          4.352941   0.006033              2956.0           8.49  0.06033          17860.426940  silhouette
+       2      308 1.797137e+06    33.731998         41.415584   0.006455              4049.0          11.64  0.06455          11600.520505  silhouette
+       3       81 5.478822e+05    40.350918        106.123457   0.007085              5546.0          15.94  0.07085           3881.745275  silhouette
+       4      300 1.131748e+06    50.690864         10.853333   0.008655              8736.0          25.10  0.08655           9795.280187  silhouette
+02:16:38 INFO    evtol_siting.pipeline      ============================================================
+02:16:38 INFO    evtol_siting.pipeline      阶段三：0-1 整数规划选址
+02:16:38 INFO    evtol_siting.pipeline      ============================================================
+02:16:38 INFO    evtol_siting.stage3_ip     [cost_priority] 需求单元 2519 个（核心 1008 个，阈值 分位数 0.60（>=21.0 次/日）），候选 1315 个，接驳时间预算 15.0 分钟，设施上限 20
+02:16:39 INFO    evtol_siting.solver_status [cost_priority] 已证明最优（相对间隙 <= 1e-09）
+02:16:39 INFO    evtol_siting.stage3_ip     [cost_priority] 解: 11 个起降场，总成本 3.14 亿元，需求覆盖率 96.1%，人口覆盖率 95.8%，核心覆盖率 100.0%（耗时 0.40s，已证明最优）
+02:16:39 INFO    evtol_siting.stage3_ip     [coverage_priority] 需求单元 2519 个（核心 1008 个，阈值 分位数 0.60（>=21.0 次/日）），候选 1315 个，接驳时间预算 15.0 分钟，设施上限 35
+02:16:39 INFO    evtol_siting.solver_status [coverage_priority] 已证明最优（相对间隙 <= 1e-09）
+02:16:39 INFO    evtol_siting.stage3_ip     [coverage_priority] 解: 10 个起降场，总成本 5.45 亿元，需求覆盖率 96.7%，人口覆盖率 96.5%，核心覆盖率 100.0%（耗时 0.40s，已证明最优）
+02:16:40 INFO    evtol_siting.stage3_ip     阶段三完成: 2 个情景求解成功（cost_priority=Optimal, coverage_priority=Optimal）
+02:16:40 INFO    evtol_siting.stage4_nsga2  问题实例: 2519 个需求单元（核心 1008），1315 个候选；接驳预算 15.0 分钟；单点最大可覆盖 299 个核心单元（占核心 29.7%）
+02:16:40 INFO    encoding_ablation          候选 1315，需求 2519，设施上限 40
+02:16:40 INFO    evtol_siting.nsga2_core    初始种群: 100 个个体 × 1315 维，站点数 区间 (12, 400)（区间初始化，自由规模）
+05:57:32 INFO    encoding_ablation          ==========================================================================
+05:57:32 INFO    encoding_ablation          编码消融：mask vs integer
+05:57:32 INFO    encoding_ablation            runs=10  pop=100  gen=100  seed=20240501  data=real
+05:57:32 INFO    encoding_ablation          ==========================================================================
+05:57:33 INFO    evtol_siting.pipeline      ============================================================
+05:57:33 INFO    evtol_siting.pipeline      阶段一：基于 GIS 的候选起降场筛选
+05:57:33 INFO    evtol_siting.pipeline      ============================================================
+05:57:33 INFO    evtol_siting.pipeline      解析 PBF 提取包: sichuan-latest.osm.pbf
+05:57:49 INFO    evtol_siting.data.pbf        已扫描 200000 个候选要素…
+05:58:08 INFO    evtol_siting.data.pbf        已扫描 400000 个候选要素…
+05:58:25 INFO    evtol_siting.data.pbf        已扫描 600000 个候选要素…
+05:58:43 INFO    evtol_siting.data.pbf        已扫描 800000 个候选要素…
+05:59:02 INFO    evtol_siting.data.pbf        已扫描 1000000 个候选要素…
+05:59:22 INFO    evtol_siting.data.pbf        已扫描 1200000 个候选要素…
+05:59:31 INFO    evtol_siting.data.pbf        buildings          70006 个要素
+05:59:31 INFO    evtol_siting.data.pbf        poi                 8159 个要素
+05:59:32 INFO    evtol_siting.data.pbf        roads              42272 个要素
+05:59:32 INFO    evtol_siting.data.pbf        landuse             8605 个要素
+05:59:32 INFO    evtol_siting.data.pbf        water               3671 个要素
+05:59:32 INFO    evtol_siting.data.pbf        airports            1365 个要素
+05:59:32 INFO    evtol_siting.data.pbf      PBF 解析完成（扫描 1271295 个候选要素，装配并保留 79825 个面要素，丢弃 0 个非法几何，输出 6 个图层）
+05:59:32 INFO    evtol_siting.data.rasters  建筑高度栅格已存在: evtol_siting\data\raw\height\chengdu_building_height_10m.tif
+05:59:39 INFO    evtol_siting.data.heights  高度栅格提供了 49323 栋建筑的高度（覆盖 70.5%）
+05:59:39 INFO    evtol_siting.data.heights  分位数回归填补了 14740 栋建筑的高度（中位数 18.6 m）
+05:59:39 INFO    evtol_siting.data.heights  高度融合结果（共 70006 栋）:
+    raster_height     70.5%
+    imputed           21.1%
+    osm_levels         7.3%
+    osm_height         1.2%
+05:59:39 INFO    evtol_siting.data.heights  各来源的栋数与高度分布（论文 §3.3 引用这些数）:
+                   n  median  mean   std
+src                                     
+raster_height  49323   18.65 19.44  5.25
+imputed        14740   18.60 18.42  1.34
+osm_levels      5100   14.10 29.66 34.60
+osm_height       843   20.00 34.44 47.47
+05:59:39 INFO    evtol_siting.data.heights      合计 70006 栋（逐来源栋数之和必须等于此数）
+05:59:43 INFO    evtol_siting.data.heights  §3.3 诊断（同口径，均为 CNBH 栅格实测）: 带 OSM 高度标签 5352 栋，中位数 23.0 m，均值 22.9 m
+05:59:43 INFO    evtol_siting.data.heights  §3.3 诊断（同口径，均为 CNBH 栅格实测）: 无 OSM 高度标签 49323 栋，中位数 18.6 m，均值 19.4 m
+05:59:43 INFO    evtol_siting.data.heights      （两个子集的中位数之差即 §3.3 所述的选择偏差；差值方向应为正值——标签偏向更高建筑）
+05:59:43 INFO    evtol_siting.data.heights      有标签覆盖率: 8.5% -> 融合后覆盖率: 100.0%
+05:59:44 INFO    evtol_siting.data.rasters  人口栅格已存在: evtol_siting\data\raw\population\chengdu_population_100m.tif
+05:59:44 INFO    evtol_siting.data.rasters  收入代理数据已存在: evtol_siting\data\raw\income\chengdu_income_proxy.gpkg
+05:59:44 INFO    evtol_siting.pipeline      收入代理已载入: 6716 个点（EPSG:4326）
+05:59:44 INFO    evtol_siting.data.rasters  DEM 已存在: evtol_siting\data\raw\dem\chengdu_dem_30m.tif
+05:59:49 INFO    evtol_siting.data.rasters  坡度栅格已生成: evtol_siting\data\interim\chengdu_slope.tif
+05:59:49 INFO    evtol_siting.geo           栅格化完成: 单元边长 500 m, 单元数 2519, 覆盖 629.8 km²
+05:59:49 INFO    evtol_siting.stage1_candidates 屋顶型筛选: 1517 / 70006 栋建筑满足 h>=20m 且 A_roof>=1600m² (2.17%)
+05:59:49 INFO    evtol_siting.stage1_candidates   排除 用地类型: 35 个单元（1.4%）
+05:59:49 INFO    evtol_siting.stage1_candidates   排除 水域: 62 个单元（2.5%）
+05:59:50 INFO    evtol_siting.stage1_candidates   建筑覆盖率判据 (max=0.55): 剔除 6 个单元（保留 2416）；覆盖率中位数 0.05
+05:59:50 INFO    evtol_siting.stage1_candidates 坡度判据: 2405 / 2416 单元满足 slope<=15° (剔除 11)
+05:59:50 INFO    evtol_siting.stage1_candidates 地面型筛选: 2405 个候选（用地排除 -114，坡度排除后）
+05:59:50 INFO    evtol_siting.stage1_candidates 地面型候选已按路网可达性重新评分（中位距离 91 m）
+05:59:50 INFO    evtol_siting.stage1_candidates 已为 1517 个缺少 cell_id 的候选（屋顶型）补齐所属栅格单元（补齐后 3818/3922 有 cell_id）
+05:59:50 INFO    evtol_siting.stage1_candidates   104 个候选落在栅格之外，改用坐标分桶作为 cell_id
+05:59:50 INFO    evtol_siting.stage1_candidates   口径 all_aeroway：1299 个非直升要素全部按运输机场处理
+05:59:50 INFO    evtol_siting.stage1_candidates   机场净空区（含民用） (r=4000m): 剔除 1498 个候选（占 38.2%）
+05:59:50 INFO    evtol_siting.stage1_candidates   既有直升机场 (r=1000m): 剔除 179 个候选（占 4.6%）
+05:59:50 INFO    evtol_siting.stage1_candidates 安全排除后剩余 2381 个候选（原有 3922）
+05:59:51 INFO    evtol_siting.stage1_candidates   [ground] 类别内稀释: 1560 -> 1560
+05:59:51 INFO    evtol_siting.stage1_candidates   [rooftop] 类别内稀释: 745 -> 269
+05:59:51 INFO    evtol_siting.stage1_candidates 密度稀释 (c_min=500m, 每栅格<=3): 2381 -> 1315 个候选 （配额 -76，类别内间距 -476，跨类别冲突 -514）；构成: {'ground': 1051, 'rooftop': 264}
+05:59:51 INFO    evtol_siting.stage1_candidates 阶段一完成: 1315 个候选起降场（屋顶型 264，地面型 1051）
+05:59:51 INFO    evtol_siting.pipeline      ============================================================
+05:59:51 INFO    evtol_siting.pipeline      阶段二：K-means 人群分类与需求空间化
+05:59:51 INFO    evtol_siting.pipeline      ============================================================
+05:59:51 INFO    evtol_siting.data.dasymetric 人口栅格分辨率 80 m 细于需求格网 500 m —— 分区求和已是正确的格网人口总量，**体积重分配在此不产生作用**，直接使用分区求和。（体积权重的价值在于把人口摊到建筑上做更细的分析，需 force=True）
+05:59:51 WARNING evtol_siting.data.dasymetric 退化为按分区求和（假设人口在格网内均匀分布）
+06:00:06 INFO    evtol_siting.stage2_demand 人口分配方式对比（论文 Table 用）:
+    method  total_population  n_nonzero_cells  mean_per_cell  std_per_cell       cv     max_cell  top1pct_share     gini
+dasymetric      7.712263e+06             2517    3061.636823   2504.238782 0.817941 12360.637527       0.032418 0.458119
+   uniform      7.712263e+06             2517    3061.636823   2504.238782 0.817941 12360.637527       0.032418 0.458119
+06:00:06 INFO    evtol_siting.stage2_demand 人口: 合计 7712263 人，单元中位数 2567 人（来源: zonal_sum）
+06:00:07 INFO    evtol_siting.stage2_demand 收入代理(RWI): 范围 [4.28, 94.31]，单元均值 28.593
+06:00:07 INFO    evtol_siting.stage2_demand POI: 研究区内 7442 个，单元密度中位数 0 个/km²
+06:00:12 INFO    evtol_siting.stage2_demand K 选择 (silhouette): K=5，得分 0.4738，各 K 得分 {3: 0.4715, 4: 0.4488, 5: 0.4738, 6: 0.4288, 7: 0.4338, 8: 0.4344}
+06:00:12 INFO    evtol_siting.choice_model  收入阶梯（K=5）: 1,877  2,956  4,049  5,546  8,736
+06:00:12 INFO    evtol_siting.choice_model  时间价值: 5.4  8.5  11.6  15.9  25.1 元/小时（对应月收入 1,877  2,956  4,049  5,546  8,736）
+06:00:12 INFO    evtol_siting.choice_model  时间价值: 1.1  1.3  1.4  1.7  1.9  2.2  2.5  2.9  3.3  3.8  4.4  5.0  5.8  6.6  7.6  8.8  10.1  11.6  13.3  15.3  17.6  20.2  23.2  26.7 元/小时（对应月收入 379  435  500  575  661  760  873  1,003  1,153  1,325  1,523  1,751  2,012  2,312  2,657  3,054  3,510  4,034  4,636  5,328  6,124  7,038  8,088  9,296）
+06:00:12 INFO    evtol_siting.choice_model  时间价值: 1.7  2.0  2.3  2.6  3.0  3.4  4.0  4.5  5.2  6.0  6.9  7.9  9.1  10.5  12.0  13.8  15.9  18.3  21.0  24.1  27.7  31.9  36.6  42.1 元/小时（对应月收入 597  686  788  906  1,041  1,197  1,375  1,581  1,816  2,088  2,399  2,757  3,169  3,642  4,186  4,810  5,529  6,354  7,302  8,392  9,645  11,085  12,739  14,641）
+06:00:12 INFO    evtol_siting.choice_model  时间价值: 2.3  2.7  3.1  3.6  4.1  4.7  5.4  6.2  7.1  8.2  9.4  10.9  12.5  14.3  16.5  18.9  21.8  25.0  28.7  33.0  38.0  43.6  50.1  57.6 元/小时（对应月收入 817  940  1,080  1,241  1,426  1,639  1,884  2,165  2,488  2,859  3,286  3,777  4,341  4,989  5,733  6,589  7,573  8,703  10,002  11,495  13,211  15,183  17,450  20,055）
+06:00:12 INFO    evtol_siting.choice_model  时间价值: 3.2  3.7  4.3  4.9  5.6  6.5  7.4  8.5  9.8  11.3  12.9  14.9  17.1  19.6  22.6  25.9  29.8  34.3  39.4  45.2  52.0  59.8  68.7  78.9 元/小时（对应月收入 1,120  1,287  1,479  1,700  1,954  2,245  2,580  2,965  3,408  3,917  4,502  5,173  5,946  6,833  7,853  9,026  10,373  11,921  13,701  15,746  18,097  20,798  23,902  27,470）
+06:00:12 INFO    evtol_siting.choice_model  时间价值: 5.1  5.8  6.7  7.7  8.8  10.2  11.7  13.4  15.4  17.7  20.4  23.4  26.9  30.9  35.5  40.9  46.9  54.0  62.0  71.3  81.9  94.1  108.2  124.3 元/小时（对应月收入 1,764  2,027  2,330  2,677  3,077  3,536  4,064  4,671  5,368  6,169  7,090  8,149  9,365  10,763  12,369  14,216  16,338  18,777  21,580  24,801  28,503  32,758  37,648  43,267）
+06:00:12 INFO    evtol_siting.choice_model  选择模型 [区域内积分（σ_within=0.4）]: 出行 15 km（单点），地面 55 分钟 / 57 元，eVTOL 24 分钟 / 130 元，节省 31 分钟；采用概率 0.0565–0.0865（类间比 1.53）
+06:00:12 INFO    evtol_siting.choice_model  各类人群采用概率:
+ cluster  monthly_income_cny  vot_cny_per_h  p_evtol  demand_rate
+       0              1877.0           5.39  0.05645     0.005645
+       1              2956.0           8.49  0.06033     0.006033
+       2              4049.0          11.64  0.06455     0.006455
+       3              5546.0          15.94  0.07085     0.007085
+       4              8736.0          25.10  0.08655     0.008655
+06:00:12 INFO    evtol_siting.stage2_demand K-means 聚类完成: K=5，总需求 50336 次/日，总人口 7712263 人
+06:00:12 INFO    evtol_siting.stage2_demand 类画像:
+ cluster  n_cells   population  income_mean  poi_density_mean  trip_rate  monthly_income_cny  vot_cny_per_h  p_evtol  demand_trips_per_day k_selection
+       0      912 1.275040e+06    15.460313          1.276316   0.005645              1877.0           5.39  0.05645           7197.602655  silhouette
+       1      918 2.960455e+06    31.655382          4.352941   0.006033              2956.0           8.49  0.06033          17860.426940  silhouette
+       2      308 1.797137e+06    33.731998         41.415584   0.006455              4049.0          11.64  0.06455          11600.520505  silhouette
+       3       81 5.478822e+05    40.350918        106.123457   0.007085              5546.0          15.94  0.07085           3881.745275  silhouette
+       4      300 1.131748e+06    50.690864         10.853333   0.008655              8736.0          25.10  0.08655           9795.280187  silhouette
+06:00:12 INFO    evtol_siting.pipeline      ============================================================
+06:00:12 INFO    evtol_siting.pipeline      阶段三：0-1 整数规划选址
+06:00:12 INFO    evtol_siting.pipeline      ============================================================
+06:00:13 INFO    evtol_siting.stage3_ip     [cost_priority] 需求单元 2519 个（核心 1008 个，阈值 分位数 0.60（>=21.0 次/日）），候选 1315 个，接驳时间预算 15.0 分钟，设施上限 20
+06:00:14 INFO    evtol_siting.solver_status [cost_priority] 已证明最优（相对间隙 <= 1e-09）
+06:00:14 INFO    evtol_siting.stage3_ip     [cost_priority] 解: 11 个起降场，总成本 3.14 亿元，需求覆盖率 96.1%，人口覆盖率 95.8%，核心覆盖率 100.0%（耗时 0.61s，已证明最优）
+06:00:14 INFO    evtol_siting.stage3_ip     [coverage_priority] 需求单元 2519 个（核心 1008 个，阈值 分位数 0.60（>=21.0 次/日）），候选 1315 个，接驳时间预算 15.0 分钟，设施上限 35
+06:00:14 INFO    evtol_siting.solver_status [coverage_priority] 已证明最优（相对间隙 <= 1e-09）
+06:00:15 INFO    evtol_siting.stage3_ip     [coverage_priority] 解: 10 个起降场，总成本 5.45 亿元，需求覆盖率 96.7%，人口覆盖率 96.5%，核心覆盖率 100.0%（耗时 0.61s，已证明最优）
+06:00:15 INFO    evtol_siting.stage3_ip     阶段三完成: 2 个情景求解成功（cost_priority=Optimal, coverage_priority=Optimal）
+06:00:15 INFO    evtol_siting.stage4_nsga2  问题实例: 2519 个需求单元（核心 1008），1315 个候选；接驳预算 15.0 分钟；单点最大可覆盖 299 个核心单元（占核心 29.7%）
+06:00:15 INFO    encoding_ablation          候选 1315，需求 2519，设施上限 40
+06:00:15 INFO    evtol_siting.nsga2_core    初始种群: 100 个个体 × 1315 维，站点数 区间 (12, 400)（区间初始化，自由规模）
+06:01:20 INFO    encoding_ablation            第  1/10 次 (seed=20240501)：掩码 100 解 /   6000 次评估 /  51.1s｜整数 100 解 /   9964 次评估 /  14.8s
+06:01:20 INFO    evtol_siting.nsga2_core    初始种群: 100 个个体 × 1315 维，站点数 区间 (12, 400)（区间初始化，自由规模）
+06:02:23 INFO    encoding_ablation            第  2/10 次 (seed=20240502)：掩码 100 解 /   5992 次评估 /  48.3s｜整数 100 解 /   9951 次评估 /  14.6s
+06:02:23 INFO    evtol_siting.nsga2_core    初始种群: 100 个个体 × 1315 维，站点数 区间 (12, 400)（区间初始化，自由规模）
+06:03:21 INFO    encoding_ablation            第  3/10 次 (seed=20240503)：掩码 100 解 /   6102 次评估 /  43.2s｜整数 100 解 /   9962 次评估 /  14.7s
+06:03:21 INFO    evtol_siting.nsga2_core    初始种群: 100 个个体 × 1315 维，站点数 区间 (12, 400)（区间初始化，自由规模）
+06:04:28 INFO    encoding_ablation            第  4/10 次 (seed=20240504)：掩码 100 解 /   6147 次评估 /  51.3s｜整数 100 解 /   9972 次评估 /  15.1s
+06:04:28 INFO    evtol_siting.nsga2_core    初始种群: 100 个个体 × 1315 维，站点数 区间 (12, 400)（区间初始化，自由规模）
+06:05:19 WARNING evtol_siting.nsga2_core    帕累托前沿在 100 代内**没有改进**（HV 4.15e+08 -> 4.15e+08）。可能原因：(1) 初始种群已被 IP 解锚定在最优附近；(2) 修复算子过强，压制了搜索空间；(3) 目标间无实质权衡。建议检查目标值分布是否退化。
+06:05:34 INFO    encoding_ablation            第  5/10 次 (seed=20240505)：掩码 100 解 /   6361 次评估 /  51.7s｜整数 100 解 /   9955 次评估 /  14.9s
+06:05:34 INFO    evtol_siting.nsga2_core    初始种群: 100 个个体 × 1315 维，站点数 区间 (12, 400)（区间初始化，自由规模）
+06:06:43 INFO    encoding_ablation            第  6/10 次 (seed=20240506)：掩码 100 解 /   6117 次评估 /  53.5s｜整数 100 解 /   9963 次评估 /  15.0s
+06:06:43 INFO    evtol_siting.nsga2_core    初始种群: 100 个个体 × 1315 维，站点数 区间 (12, 400)（区间初始化，自由规模）
+06:07:48 INFO    encoding_ablation            第  7/10 次 (seed=20240507)：掩码 100 解 /   6320 次评估 /  48.1s｜整数 100 解 /   9948 次评估 /  16.8s
+06:07:48 INFO    evtol_siting.nsga2_core    初始种群: 100 个个体 × 1315 维，站点数 区间 (12, 400)（区间初始化，自由规模）
+06:08:59 INFO    encoding_ablation            第  8/10 次 (seed=20240508)：掩码 100 解 /   6119 次评估 /  56.4s｜整数 100 解 /   9936 次评估 /  15.0s
+06:08:59 INFO    evtol_siting.nsga2_core    初始种群: 100 个个体 × 1315 维，站点数 区间 (12, 400)（区间初始化，自由规模）
+06:10:09 INFO    encoding_ablation            第  9/10 次 (seed=20240509)：掩码 100 解 /   6052 次评估 /  54.4s｜整数 100 解 /   9970 次评估 /  15.1s
+06:10:09 INFO    evtol_siting.nsga2_core    初始种群: 100 个个体 × 1315 维，站点数 区间 (12, 400)（区间初始化，自由规模）
+06:11:21 INFO    encoding_ablation            第 10/10 次 (seed=20240510)：掩码 100 解 /   6444 次评估 /  57.7s｜整数 100 解 /   9941 次评估 /  14.7s
+06:13:08 INFO    encoding_ablation          
+06:13:08 INFO    encoding_ablation          ── 结果（统一参考点 [3.7842e+04 5.3275e+05 1.2732e+01 2.4056e+10]）──
+06:13:08 INFO    encoding_ablation             mask     HV 均值 1.1362e+21 ± 2.32e+19（n=10）｜前沿 100±0 个解｜评估 6165±147 次｜耗时 51.6±4.1 s
+06:13:08 INFO    encoding_ablation             integer  HV 均值 1.1713e+21 ± 1.67e+19（n=10）｜前沿 100±0 个解｜评估 9956±11 次｜耗时 15.1±0.6 s
+06:13:08 INFO    encoding_ablation             Mann-Whitney p=0.005795，Cliff's δ=-0.740
+06:13:08 INFO    encoding_ablation             判读：两种编码存在**显著差异**（整数编码更优）。§4.5.1 的「等价」必须限定为**解空间等价**，并如实写明搜索行为不等价、差异方向与幅度。
+06:13:08 INFO    encoding_ablation          已写出 evtol_siting\outputs\tables\encoding_ablation.csv

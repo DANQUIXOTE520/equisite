@@ -1,0 +1,617 @@
+20:23:11 INFO    evtol_siting.pipeline      下载 OSM 建筑数据（分块，可能耗时较久）...
+20:23:11 INFO    evtol_siting.data.osm      图层 'buildings': 132 个瓦片，覆盖 bbox=(103.88, 30.36, 104.28, 30.82)
+20:26:19 INFO    evtol_siting.pipeline      下载 OSM 建筑数据（分块，可能耗时较久）...
+20:26:19 INFO    evtol_siting.data.osm      图层 'buildings': 132 个瓦片，覆盖 bbox=(103.88, 30.36, 104.28, 30.82)
+20:26:28 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:28:36 WARNING evtol_siting.data.osm      Overpass https://overpass.kumi.systems/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:29:16 INFO    evtol_siting.pipeline      下载 OSM 建筑数据（分块，可能耗时较久）...
+20:29:16 INFO    evtol_siting.data.osm      图层 'buildings': 504 个瓦片，覆盖 bbox=(103.88, 30.36, 104.28, 30.82)
+20:29:33 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:30:59 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass.private.coffee/api/interpreter)，第 3/3 次：HTTPSConnectionPool(host='overpass.private.coffee', port=443): Max retries exceeded with url: /api/interpreter (Caused b
+20:31:11 ERROR   evtol_siting.data.osm      瓦片 1/132 (103.88, 30.36, 103.92, 30.4) 下载失败: Overpass 查询在 3 次尝试后仍失败
+20:31:26 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:31:30 WARNING evtol_siting.data.osm      Overpass https://overpass.kumi.systems/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:31:32 INFO    evtol_siting.pipeline      下载 OSM 建筑数据（分块，可能耗时较久）...
+20:31:32 INFO    evtol_siting.data.osm      图层 'buildings': 504 个瓦片，覆盖 bbox=(103.88, 30.36, 104.28, 30.82)
+20:31:42 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:34:00 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass.private.coffee/api/interpreter)，第 3/3 次：HTTPSConnectionPool(host='overpass.private.coffee', port=443): Max retries exceeded with url: /api/interpreter (Caused b
+20:34:01 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass.kumi.systems/api/interpreter)，第 2/3 次：HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Max retries exceeded with url: /api/interpreter (Caused by 
+20:34:01 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass.kumi.systems/api/interpreter)，第 2/3 次：HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Max retries exceeded with url: /api/interpreter (Caused by 
+20:34:12 INFO    evtol_siting.data.osm      瓦片 (103.88, 30.38, 103.9, 30.4) 下载失败，二分后重试（深度 1）: Overpass 查询在 3 次尝试后仍失败
+20:34:34 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 1/3 次尝试），3s 后重试
+20:36:04 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:36:22 INFO    evtol_siting.pipeline      下载 OSM 建筑数据（分块，可能耗时较久）...
+20:36:22 INFO    evtol_siting.data.osm      图层 'buildings': 300 个瓦片，覆盖 bbox=(103.92, 30.4, 104.22, 30.78)
+20:36:49 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:37:02 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:37:25 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:38:02 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:38:11 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:38:24 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:38:36 INFO    evtol_siting.data.osm      瓦片 (103.92, 30.5, 103.94, 30.52) 下载失败，二分后重试（深度 1）: Overpass 查询在 3 次尝试后仍失败
+20:38:44 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:39:03 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:39:15 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:39:21 ERROR   evtol_siting.data.osm      瓦片 6/300 (103.92, 30.5, 103.94, 30.52) 下载失败（含二分重试）
+20:39:31 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:39:48 INFO    evtol_siting.pipeline      下载 OSM 建筑数据（分块，可能耗时较久）...
+20:39:48 INFO    evtol_siting.data.osm      图层 'buildings': 300 个瓦片，覆盖 bbox=(103.92, 30.4, 104.22, 30.78)
+20:39:54 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:40:10 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:41:10 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:41:38 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:42:09 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:42:22 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:43:09 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:43:23 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:43:38 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:43:50 INFO    evtol_siting.data.osm      瓦片 (103.92, 30.64, 103.94, 30.66) 下载失败，二分后重试（深度 1）: Overpass 查询在 3 次尝试后仍失败
+20:43:59 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:44:13 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 1/3 次尝试），3s 后重试
+20:44:23 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:44:49 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:44:58 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:45:29 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:45:39 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:45:55 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:46:07 INFO    evtol_siting.data.osm      瓦片 (103.92, 30.66, 103.94, 30.68) 下载失败，二分后重试（深度 1）: Overpass 查询在 3 次尝试后仍失败
+20:46:27 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:46:41 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 1/3 次尝试），3s 后重试
+20:46:51 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:47:06 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:47:18 INFO    evtol_siting.data.osm      瓦片 (103.92, 30.67, 103.93, 30.68) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+20:47:28 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:47:38 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:47:52 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:48:04 INFO    evtol_siting.data.osm      瓦片 (103.92, 30.67, 103.925, 30.675) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+20:48:11 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:48:40 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:48:51 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:49:07 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:49:19 WARNING evtol_siting.data.osm      瓦片 (103.92, 30.6725, 103.9225, 30.675) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+20:49:29 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:49:42 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:49:56 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:50:08 WARNING evtol_siting.data.osm      瓦片 (103.9225, 30.6725, 103.925, 30.675) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+20:50:28 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 1/3 次尝试），3s 后重试
+20:50:41 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 2/3 次尝试），6s 后重试
+20:51:00 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:51:28 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:51:54 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:52:37 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:52:49 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:53:23 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:53:36 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:53:52 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:54:04 INFO    evtol_siting.data.osm      瓦片 (103.92, 30.76, 103.94, 30.78) 下载失败，二分后重试（深度 1）: Overpass 查询在 3 次尝试后仍失败
+20:54:16 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:54:28 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:54:46 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:54:58 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:55:12 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:55:24 INFO    evtol_siting.data.osm      瓦片 (103.93, 30.76, 103.94, 30.77) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+20:55:36 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:55:48 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:56:03 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:56:15 WARNING evtol_siting.data.osm      瓦片 (103.935, 30.76, 103.94, 30.765) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+20:56:28 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:56:43 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:57:32 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:57:43 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+20:57:59 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:58:11 INFO    evtol_siting.data.osm      瓦片 (103.92, 30.78, 103.94, 30.78) 下载失败，二分后重试（深度 1）: Overpass 查询在 3 次尝试后仍失败
+20:58:34 ERROR   evtol_siting.data.osm      瓦片 20/300 (103.92, 30.78, 103.94, 30.78) 下载失败（含二分重试）
+20:58:42 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 1/3 次尝试），3s 后重试
+20:58:55 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 2/3 次尝试），6s 后重试
+20:59:10 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+20:59:22 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.4, 103.96, 30.42) 下载失败，二分后重试（深度 1）: Overpass 查询在 3 次尝试后仍失败
+20:59:34 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+20:59:48 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:00:03 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+21:00:15 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.4, 103.95, 30.41) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+21:00:40 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 1/3 次尝试），3s 后重试
+21:00:54 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 2/3 次尝试），6s 后重试
+21:01:17 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:01:40 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 1/3 次尝试），3s 后重试
+21:01:53 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:02:10 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+21:02:22 INFO    evtol_siting.data.osm      瓦片 (103.95, 30.4, 103.96, 30.41) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+21:02:46 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:02:58 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:03:12 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+21:03:24 INFO    evtol_siting.data.osm      瓦片 (103.955, 30.4, 103.96, 30.405) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+21:03:34 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:03:49 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:04:01 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:04:24 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:04:35 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:04:50 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+21:05:02 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.4025, 103.9575, 30.405) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:05:48 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:06:00 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:06:15 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+21:06:27 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.41, 103.95, 30.42) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+21:06:42 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:06:56 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:07:08 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:07:34 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 1/3 次尝试），3s 后重试
+21:07:45 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 2/3 次尝试），6s 后重试
+21:08:00 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+21:08:12 INFO    evtol_siting.data.osm      瓦片 (103.95, 30.41, 103.96, 30.42) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+21:08:22 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:08:33 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:08:48 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+21:09:00 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.41, 103.955, 30.415) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:09:11 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:09:25 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:09:43 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+21:09:55 INFO    evtol_siting.data.osm      瓦片 (103.955, 30.41, 103.96, 30.415) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+21:10:14 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 1/3 次尝试），3s 后重试
+21:10:29 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:10:41 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:10:59 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+21:11:11 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.4125, 103.96, 30.415) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:11:17 ERROR   evtol_siting.data.osm      瓦片 21/300 (103.94, 30.4, 103.96, 30.42) 下载失败（含二分重试）
+21:11:27 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 429（第 1/3 次尝试），3s 后重试
+21:11:38 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:11:55 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+21:12:07 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.42, 103.96, 30.44) 下载失败，二分后重试（深度 1）: Overpass 查询在 3 次尝试后仍失败
+21:12:16 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:12:26 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:12:41 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 3/3 次尝试），12s 后重试
+21:12:53 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.42, 103.95, 30.43) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+21:13:06 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:13:19 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 2/3 次尝试），6s 后重试
+21:13:45 WARNING evtol_siting.data.osm      Overpass https://overpass-api.de/api/interpreter 返回 504（第 1/3 次尝试），3s 后重试
+21:14:05 INFO    evtol_siting.pipeline      下载 OSM 建筑数据（分块，可能耗时较久）...
+21:14:05 INFO    evtol_siting.data.osm      图层 'buildings': 300 个瓦片，覆盖 bbox=(103.92, 30.4, 104.22, 30.78)
+21:14:14 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 30s 后重试（第 1/3 次）
+21:14:51 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 60s 后重试（第 2/3 次）
+21:16:01 INFO    evtol_siting.data.osm        20/300 瓦片完成（累计 711 个要素，19 来自缓存）
+21:16:11 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 30s 后重试（第 1/3 次）
+21:17:07 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 30s 后重试（第 1/3 次）
+21:17:51 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 60s 后重试（第 2/3 次）
+21:18:59 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 90s 后重试（第 3/3 次）
+21:20:29 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.42, 103.96, 30.44) 下载失败，二分后重试（深度 1）: Overpass 查询在 3 次尝试后仍失败
+21:20:37 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 30s 后重试（第 1/3 次）
+21:21:16 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 60s 后重试（第 2/3 次）
+21:22:24 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 90s 后重试（第 3/3 次）
+21:23:54 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.42, 103.95, 30.43) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+21:24:01 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 30s 后重试（第 1/3 次）
+21:24:39 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 60s 后重试（第 2/3 次）
+21:26:05 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 90s 后重试（第 3/3 次）
+21:27:35 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.42, 103.945, 30.425) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:27:40 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:27:48 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:27:59 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:28:11 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.42, 103.95, 30.425) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:28:16 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:28:24 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:28:35 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:28:47 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.425, 103.945, 30.43) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:28:52 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:29:01 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:29:12 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:29:24 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.425, 103.95, 30.43) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:29:29 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:29:37 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:29:48 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:30:00 INFO    evtol_siting.data.osm      瓦片 (103.95, 30.42, 103.96, 30.43) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+21:30:05 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:30:13 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:30:24 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:30:36 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.42, 103.955, 30.425) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:30:41 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:30:49 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:31:00 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:31:12 INFO    evtol_siting.data.osm      瓦片 (103.955, 30.42, 103.96, 30.425) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+21:31:17 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:31:25 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:31:36 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:31:48 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.42, 103.9575, 30.4225) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:31:53 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:32:01 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:32:12 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:32:24 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.42, 103.96, 30.4225) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:32:29 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:32:37 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:32:48 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:33:00 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.4225, 103.9575, 30.425) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:33:05 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:33:13 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:33:24 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:33:36 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.4225, 103.96, 30.425) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:33:41 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:33:49 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:34:00 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:34:12 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.425, 103.955, 30.43) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:34:17 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:34:25 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:34:36 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:34:48 INFO    evtol_siting.data.osm      瓦片 (103.955, 30.425, 103.96, 30.43) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+21:34:53 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:35:01 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:35:12 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:35:24 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.425, 103.9575, 30.4275) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:35:29 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:35:37 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:35:49 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:36:01 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.425, 103.96, 30.4275) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:36:06 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:36:14 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:36:25 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:36:37 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.4275, 103.9575, 30.43) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:36:42 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:36:50 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:37:01 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:37:13 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.4275, 103.96, 30.43) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:37:18 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:37:26 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:37:37 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:37:49 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.43, 103.95, 30.44) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+21:37:54 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:38:02 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:38:13 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:38:25 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.43, 103.945, 30.435) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+21:38:30 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:38:38 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:38:49 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:39:01 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.43, 103.9425, 30.4325) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:39:06 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:39:14 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:39:25 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:39:37 WARNING evtol_siting.data.osm      瓦片 (103.9425, 30.43, 103.945, 30.4325) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:39:42 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:39:50 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:40:01 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:40:13 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.4325, 103.9425, 30.435) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:40:18 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:40:26 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:40:37 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:40:49 WARNING evtol_siting.data.osm      瓦片 (103.9425, 30.4325, 103.945, 30.435) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:40:54 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:41:02 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:41:13 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:41:25 INFO    evtol_siting.data.osm      瓦片 (103.945, 30.43, 103.95, 30.435) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+21:41:30 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:41:38 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:41:49 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:42:01 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.43, 103.9475, 30.4325) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:42:06 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:42:15 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:42:26 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:42:38 WARNING evtol_siting.data.osm      瓦片 (103.9475, 30.43, 103.95, 30.4325) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:42:43 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:42:51 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:43:02 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:43:14 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.4325, 103.9475, 30.435) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:43:19 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:43:27 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:43:38 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:43:50 WARNING evtol_siting.data.osm      瓦片 (103.9475, 30.4325, 103.95, 30.435) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:43:55 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:44:03 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:44:14 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:44:26 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.435, 103.945, 30.44) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:44:31 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:44:39 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:44:50 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:45:02 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.435, 103.95, 30.44) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:45:07 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:45:15 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:45:26 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:45:38 INFO    evtol_siting.data.osm      瓦片 (103.95, 30.43, 103.96, 30.44) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+21:45:43 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:45:51 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:46:02 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:46:14 INFO    evtol_siting.data.osm      瓦片 (103.95, 30.43, 103.955, 30.435) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+21:46:19 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:46:27 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:46:38 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:46:50 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.43, 103.9525, 30.4325) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:46:55 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:47:03 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:47:14 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:47:26 WARNING evtol_siting.data.osm      瓦片 (103.9525, 30.43, 103.955, 30.4325) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:47:31 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:47:39 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:47:50 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:48:02 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.4325, 103.9525, 30.435) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:48:07 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:48:15 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:48:26 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:48:38 WARNING evtol_siting.data.osm      瓦片 (103.9525, 30.4325, 103.955, 30.435) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:48:44 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:48:52 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:49:03 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:49:15 INFO    evtol_siting.data.osm      瓦片 (103.955, 30.43, 103.96, 30.435) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+21:49:20 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:49:28 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:49:39 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:49:51 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.43, 103.9575, 30.4325) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:49:56 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:50:04 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:50:15 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:50:27 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.43, 103.96, 30.4325) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:50:32 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:50:40 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:50:51 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:51:03 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.4325, 103.9575, 30.435) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:51:08 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:51:16 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:51:27 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:51:39 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.4325, 103.96, 30.435) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:51:44 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:51:52 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:52:03 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:52:15 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.435, 103.955, 30.44) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:52:20 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:52:28 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:52:39 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:52:51 INFO    evtol_siting.data.osm      瓦片 (103.955, 30.435, 103.96, 30.44) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+21:52:56 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:53:04 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:53:15 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:53:27 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.435, 103.9575, 30.4375) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:53:32 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:53:40 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:53:51 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:54:03 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.435, 103.96, 30.4375) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:54:08 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:54:16 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:54:27 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:54:39 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.4375, 103.9575, 30.44) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:54:44 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:54:52 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:55:03 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:55:15 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.4375, 103.96, 30.44) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:55:15 ERROR   evtol_siting.data.osm      瓦片 22/300 (103.94, 30.42, 103.96, 30.44) 下载失败（含二分重试）
+21:55:20 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:55:28 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:55:40 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:55:52 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.44, 103.96, 30.46) 下载失败，二分后重试（深度 1）: Overpass 查询在 3 次尝试后仍失败
+21:55:57 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:56:05 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:56:16 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:56:28 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.44, 103.95, 30.45) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+21:56:33 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:56:41 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:56:52 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:57:04 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.44, 103.945, 30.445) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:57:09 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:57:17 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:57:28 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:57:40 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.44, 103.95, 30.445) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:57:45 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:57:53 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:58:04 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:58:16 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.445, 103.945, 30.45) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+21:58:21 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:58:29 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:58:40 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:58:52 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.445, 103.9425, 30.4475) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:58:57 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:59:05 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:59:16 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:59:28 WARNING evtol_siting.data.osm      瓦片 (103.9425, 30.445, 103.945, 30.4475) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+21:59:33 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:59:41 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+21:59:52 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:00:04 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.4475, 103.9425, 30.45) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:00:09 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:00:17 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:00:28 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:00:40 WARNING evtol_siting.data.osm      瓦片 (103.9425, 30.4475, 103.945, 30.45) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:00:45 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:00:53 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:01:04 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:01:16 INFO    evtol_siting.data.osm      瓦片 (103.945, 30.445, 103.95, 30.45) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+22:01:21 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:01:29 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:01:40 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:01:52 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.445, 103.9475, 30.4475) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:01:57 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:02:05 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:02:16 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:02:28 WARNING evtol_siting.data.osm      瓦片 (103.9475, 30.445, 103.95, 30.4475) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:02:33 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:02:42 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:02:53 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:03:05 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.4475, 103.9475, 30.45) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:03:10 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:03:18 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:03:29 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:03:41 WARNING evtol_siting.data.osm      瓦片 (103.9475, 30.4475, 103.95, 30.45) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:03:46 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:03:54 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:04:05 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:04:17 INFO    evtol_siting.data.osm      瓦片 (103.95, 30.44, 103.96, 30.45) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+22:04:22 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:04:30 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:04:41 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:04:53 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.44, 103.955, 30.445) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:04:58 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:05:06 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:05:17 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:05:29 INFO    evtol_siting.data.osm      瓦片 (103.955, 30.44, 103.96, 30.445) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+22:05:34 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:05:42 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:05:53 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:06:05 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.44, 103.9575, 30.4425) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:06:10 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:06:18 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:06:29 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:06:41 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.44, 103.96, 30.4425) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:06:46 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:06:54 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:07:05 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:07:17 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.4425, 103.9575, 30.445) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:07:22 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:07:30 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:07:41 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:07:53 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.4425, 103.96, 30.445) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:07:58 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:08:06 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:08:17 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:08:29 INFO    evtol_siting.data.osm      瓦片 (103.95, 30.445, 103.955, 30.45) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+22:08:34 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:08:42 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:08:53 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:09:05 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.445, 103.9525, 30.4475) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:09:10 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:09:18 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:09:29 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:09:41 WARNING evtol_siting.data.osm      瓦片 (103.9525, 30.445, 103.955, 30.4475) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:09:47 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:09:55 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:10:06 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:10:18 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.4475, 103.9525, 30.45) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:10:23 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:10:31 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:10:42 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:10:54 WARNING evtol_siting.data.osm      瓦片 (103.9525, 30.4475, 103.955, 30.45) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:10:59 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:11:07 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:11:18 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:11:30 INFO    evtol_siting.data.osm      瓦片 (103.955, 30.445, 103.96, 30.45) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+22:11:35 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:11:43 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:11:54 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:12:06 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.445, 103.9575, 30.4475) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:12:11 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:12:19 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:12:30 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:12:42 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.445, 103.96, 30.4475) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:12:47 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:12:55 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:13:06 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:13:18 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.4475, 103.9575, 30.45) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:13:23 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:13:31 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:13:42 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:13:54 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.4475, 103.96, 30.45) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:13:59 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:14:07 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:14:18 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:14:30 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.45, 103.95, 30.46) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+22:14:35 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:14:43 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:14:54 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:15:06 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.45, 103.945, 30.455) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:15:11 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:15:19 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:15:30 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:15:42 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.45, 103.95, 30.455) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:15:47 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:15:55 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:16:06 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:16:18 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.455, 103.945, 30.46) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:16:23 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:16:32 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:16:43 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:16:55 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.455, 103.95, 30.46) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:17:00 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:17:08 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:17:19 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:17:31 INFO    evtol_siting.data.osm      瓦片 (103.95, 30.45, 103.96, 30.46) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+22:17:36 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:17:44 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:17:55 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:18:07 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.45, 103.955, 30.455) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:18:12 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:18:20 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:18:31 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:18:43 INFO    evtol_siting.data.osm      瓦片 (103.955, 30.45, 103.96, 30.455) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+22:18:48 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:19:03 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:19:14 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:19:26 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.45, 103.9575, 30.4525) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:19:31 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:19:39 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:19:50 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:20:02 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.45, 103.96, 30.4525) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:20:07 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:20:15 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:20:26 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:20:38 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.4525, 103.9575, 30.455) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:20:43 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:20:51 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:21:02 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:21:14 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.4525, 103.96, 30.455) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:21:19 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:21:27 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:21:38 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:21:50 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.455, 103.955, 30.46) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:21:55 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:22:03 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:22:14 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:22:26 INFO    evtol_siting.data.osm      瓦片 (103.955, 30.455, 103.96, 30.46) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+22:22:31 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:22:39 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:22:50 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:23:02 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.455, 103.9575, 30.4575) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:23:07 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:23:15 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:23:26 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:23:38 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.455, 103.96, 30.4575) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:23:43 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:23:51 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:24:02 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:24:14 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.4575, 103.9575, 30.46) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:24:19 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:24:28 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:24:39 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:24:51 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.4575, 103.96, 30.46) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:24:51 ERROR   evtol_siting.data.osm      瓦片 23/300 (103.94, 30.44, 103.96, 30.46) 下载失败（含二分重试）
+22:24:56 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:25:04 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:25:15 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:25:27 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.46, 103.96, 30.48) 下载失败，二分后重试（深度 1）: Overpass 查询在 3 次尝试后仍失败
+22:25:32 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:25:40 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:25:51 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:26:03 INFO    evtol_siting.data.osm      瓦片 (103.94, 30.46, 103.95, 30.47) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+22:26:08 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:26:16 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:26:27 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:26:39 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.46, 103.945, 30.465) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:26:44 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:26:52 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:27:03 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:27:15 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.46, 103.95, 30.465) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:27:20 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:27:28 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:27:39 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:27:51 WARNING evtol_siting.data.osm      瓦片 (103.94, 30.465, 103.945, 30.47) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:27:56 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:28:04 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:28:15 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:28:27 WARNING evtol_siting.data.osm      瓦片 (103.945, 30.465, 103.95, 30.47) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:28:32 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:28:40 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:28:51 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:29:03 INFO    evtol_siting.data.osm      瓦片 (103.95, 30.46, 103.96, 30.47) 下载失败，二分后重试（深度 2）: Overpass 查询在 3 次尝试后仍失败
+22:29:04 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:29:07 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:29:13 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:29:25 WARNING evtol_siting.data.osm      瓦片 (103.95, 30.46, 103.955, 30.465) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:29:26 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:29:29 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:29:35 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:29:47 INFO    evtol_siting.data.osm      瓦片 (103.955, 30.46, 103.96, 30.465) 下载失败，二分后重试（深度 3）: Overpass 查询在 3 次尝试后仍失败
+22:29:47 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:29:51 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:29:57 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:30:09 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.46, 103.9575, 30.4625) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:30:10 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:30:13 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:30:19 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:30:31 WARNING evtol_siting.data.osm      瓦片 (103.9575, 30.46, 103.96, 30.4625) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:30:32 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 1/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:30:35 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 2/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:30:41 WARNING evtol_siting.data.osm      Overpass 请求失败 (https://overpass-api.de/api/interpreter)，第 3/3 次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+22:30:53 WARNING evtol_siting.data.osm      瓦片 (103.955, 30.4625, 103.9575, 30.465) 在最小尺寸下仍失败，放弃: Overpass 查询在 3 次尝试后仍失败
+22:31:03 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 30s 后重试（第 1/3 次）
+22:31:49 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 429，响应仅 703 字节)，冷却 30s 后重试（第 1/3 次）
+22:32:24 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 60s 后重试（第 2/3 次）
+22:33:39 WARNING evtol_siting.data.osm      Overpass 限流 (HTTP 504，响应仅 695 字节)，冷却 90s 后重试（第 3/3 次）

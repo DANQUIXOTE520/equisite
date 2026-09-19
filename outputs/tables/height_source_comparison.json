@@ -1,0 +1,14 @@
+{
+  "min_height_m": 20.0,
+  "min_roof_area_m2": 1600.0,
+  "n_buildings": 70006,
+  "n_tagged": 5943,
+  "tagged_pct": 8.48927234808445,
+  "tag_only_rooftop": 256,
+  "fused_rooftop": 1517,
+  "ratio": 5.92578125,
+  "tag_sources": [
+    "osm_height",
+    "osm_levels"
+  ]
+}

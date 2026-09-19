@@ -1,0 +1,183 @@
+{
+ "version": 9,
+ "complete": false,
+ "created": "2026-09-18 23:58:11",
+ "n_solutions": 8,
+ "solutions": [
+  {
+   "name": "set_covering",
+   "status": "Optimal",
+   "selected": [
+    41,
+    109,
+    118,
+    192,
+    371,
+    609,
+    727,
+    1218,
+    1261,
+    1283
+   ],
+   "objective": 10.0,
+   "n_sites": 10,
+   "solve_time_s": 2.711991548538208,
+   "feasible": true,
+   "gap": 0.0
+  },
+  {
+   "name": "p_center_p8",
+   "status": "Infeasible",
+   "selected": [],
+   "objective": Infinity,
+   "n_sites": 0,
+   "solve_time_s": 32.22430229187012,
+   "feasible": false,
+   "gap": null
+  },
+  {
+   "name": "max_coverage_p8",
+   "status": "Optimal",
+   "selected": [
+    259,
+    325,
+    668,
+    814,
+    824,
+    857,
+    1119,
+    1159
+   ],
+   "objective": 47961.17603127194,
+   "n_sites": 8,
+   "solve_time_s": 85.70770478248596,
+   "feasible": true,
+   "gap": null
+  },
+  {
+   "name": "p_center_p12",
+   "status": "Optimal",
+   "selected": [
+    52,
+    227,
+    371,
+    467,
+    635,
+    823,
+    899,
+    1073,
+    1141,
+    1222,
+    1261
+   ],
+   "objective": 13.613801002502441,
+   "n_sites": 11,
+   "solve_time_s": 15.872230052947998,
+   "feasible": true,
+   "gap": null
+  },
+  {
+   "name": "max_coverage_p12",
+   "status": "Optimal",
+   "selected": [
+    109,
+    176,
+    225,
+    349,
+    376,
+    443,
+    488,
+    605,
+    817,
+    1176,
+    1212,
+    1261
+   ],
+   "objective": 50228.99403547166,
+   "n_sites": 12,
+   "solve_time_s": 72.73982048034668,
+   "feasible": true,
+   "gap": null
+  },
+  {
+   "name": "p_median_p18",
+   "status": "Optimal",
+   "selected": [
+    21,
+    51,
+    116,
+    191,
+    225,
+    249,
+    297,
+    371,
+    418,
+    540,
+    736,
+    893,
+    1100,
+    1115,
+    1120,
+    1176,
+    1251,
+    1261
+   ],
+   "objective": 380078.1657274097,
+   "n_sites": 18,
+   "solve_time_s": 551.3117680549622,
+   "feasible": true,
+   "gap": 0.0
+  },
+  {
+   "name": "p_center_p18",
+   "status": "Optimal",
+   "selected": [
+    52,
+    227,
+    371,
+    467,
+    635,
+    823,
+    899,
+    1073,
+    1141,
+    1222,
+    1261
+   ],
+   "objective": 13.613801002502441,
+   "n_sites": 11,
+   "solve_time_s": 6.957415819168091,
+   "feasible": true,
+   "gap": null
+  },
+  {
+   "name": "max_coverage_p18",
+   "status": "Optimal",
+   "selected": [
+    0,
+    21,
+    238,
+    385,
+    407,
+    418,
+    542,
+    665,
+    964,
+    1008,
+    1053,
+    1094,
+    1113,
+    1136,
+    1212,
+    1249,
+    1261,
+    1281
+   ],
+   "objective": 50338.914889649765,
+   "n_sites": 18,
+   "solve_time_s": 33.60358262062073,
+   "feasible": true,
+   "gap": null
+  }
+ ]
+}

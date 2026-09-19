@@ -1,0 +1,45 @@
+{
+  "n_reps_per_arm": 10,
+  "comparison_unified": [
+    {
+      "direction": "group_mean 被 individual_max 支配的解数",
+      "count": 690,
+      "total": 1000,
+      "pct": 69.0
+    },
+    {
+      "direction": "individual_max 被 group_mean 支配的解数",
+      "count": 545,
+      "total": 1000,
+      "pct": 54.5
+    }
+  ],
+  "comparison_raw": [
+    {
+      "direction": "group_mean 被 individual_max 支配的解数",
+      "count": 0,
+      "total": 1000,
+      "pct": 0.0
+    },
+    {
+      "direction": "individual_max 被 group_mean 支配的解数",
+      "count": 678,
+      "total": 1000,
+      "pct": 67.8
+    }
+  ],
+  "unified_group_mean_objectives": {
+    "group_mean": {
+      "f3_min": 5.888644167658988,
+      "f3_median": 8.181765624870884,
+      "front_size": 1000
+    },
+    "individual_max": {
+      "f3_min": 5.89080503066371,
+      "f3_median": 8.117122625743253,
+      "front_size": 1000
+    }
+  },
+  "group_mean_front_size": 1000,
+  "individual_max_front_size": 1000
+}

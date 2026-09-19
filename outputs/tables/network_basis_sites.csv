@@ -1,0 +1,5 @@
+basis,solution,n_sites
+euclidean,ip_0,11
+euclidean,ip_1,10
+network,ip_0,0
+network,ip_1,28

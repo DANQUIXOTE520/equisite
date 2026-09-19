@@ -1,0 +1,53 @@
+22:37:16 INFO    run_all                    ==============================================================================
+22:37:16 INFO    run_all                     基于 GIS 与多目标优化的 eVTOL 起降场选址 —— 四阶段集成方法
+22:37:16 INFO    run_all                     run tag: run_20260914_223716
+22:37:16 INFO    run_all                    ==============================================================================
+22:37:16 INFO    run_all                    
+config: chengdu.yaml
+  stage1_candidates.rooftop.min_height_m               = 20.0
+  stage1_candidates.rooftop.min_roof_area_m2           = 1600.0
+  stage1_candidates.dilution.min_distance_m            = 500.0
+  stage1_candidates.grid_size_m                        = 500.0
+  stage2_demand.n_clusters                             = 5
+  stage3_ip.access_radius_m                            = 3000.0
+  stage3_ip.min_core_demand                            = 0.6
+  stage4_nsga2.pop_size                                = 200
+  stage4_nsga2.n_gen                                   = 300
+22:37:17 INFO    evtol_siting.pipeline      解析 PBF 提取包: sichuan-latest.osm.pbf
+22:37:25 INFO    evtol_siting.data.pbf        已扫描 200000 个候选要素…
+22:37:34 INFO    evtol_siting.data.pbf        已扫描 400000 个候选要素…
+22:37:42 INFO    evtol_siting.data.pbf        已扫描 600000 个候选要素…
+22:37:52 INFO    evtol_siting.data.pbf        已扫描 800000 个候选要素…
+22:37:59 INFO    evtol_siting.data.pbf        buildings          69675 个要素
+22:37:59 INFO    evtol_siting.data.pbf        poi                 8159 个要素
+22:38:00 INFO    evtol_siting.data.pbf        roads              42272 个要素
+22:38:01 INFO    evtol_siting.data.pbf        landuse             8430 个要素
+22:38:01 INFO    evtol_siting.data.pbf        water               2252 个要素
+22:38:01 INFO    evtol_siting.data.pbf        airports            1364 个要素
+22:38:01 INFO    evtol_siting.data.pbf      PBF 解析完成（扫描 921830 个候选要素，输出 6 个图层）
+22:38:01 INFO    evtol_siting.data.rasters  CNBH 需要 2 个瓦片覆盖 bbox=(103.92, 30.4, 104.22, 30.78): CNBH10m_X103Y31, CNBH10m_X105Y31
+22:38:01 INFO    evtol_siting.data.rasters  下载 https://zenodo.org/records/7923866/files/CNBH10m_X103Y31.tif?download=1 -> CNBH10m_X103Y31.tif
+22:38:21 INFO    evtol_siting.data.rasters    47.0%  (21/45 MB)
+22:38:48 INFO    evtol_siting.data.rasters    94.0%  (42/45 MB)
+22:38:51 INFO    evtol_siting.data.rasters  完成: CNBH10m_X103Y31.tif (44.6 MB)
+22:38:51 INFO    evtol_siting.data.rasters  下载 https://zenodo.org/records/7923866/files/CNBH10m_X105Y31.tif?download=1 -> CNBH10m_X105Y31.tif
+22:39:08 INFO    evtol_siting.data.rasters    24.8%  (21/85 MB)
+22:39:24 INFO    evtol_siting.data.rasters    49.6%  (42/85 MB)
+22:39:39 INFO    evtol_siting.data.rasters    74.4%  (63/85 MB)
+22:40:06 INFO    evtol_siting.data.rasters    99.2%  (84/85 MB)
+22:40:06 INFO    evtol_siting.data.rasters    100.0%  (85/85 MB)
+22:40:06 INFO    evtol_siting.data.rasters  完成: CNBH10m_X105Y31.tif (84.6 MB)
+22:41:18 INFO    evtol_siting.data.rasters  CNBH 高度栅格镶嵌完成: evtol_siting\data\raw\height\chengdu_building_height_10m.tif（2 个瓦片，EPSG:32648，(1, 22559, 38586)）
+22:41:24 INFO    evtol_siting.data.heights  高度栅格提供了 49162 栋建筑的高度（覆盖 70.6%）
+22:41:24 INFO    evtol_siting.data.heights  分位数回归填补了 14650 栋建筑的高度（中位数 18.6 m）
+22:41:24 INFO    evtol_siting.data.heights  高度融合结果（共 69675 栋）:
+    raster_height     70.6%
+    imputed           21.0%
+    osm_levels         7.3%
+    osm_height         1.1%
+22:41:24 INFO    evtol_siting.data.heights      有标签覆盖率: 8.4% -> 融合后覆盖率: 100.0%
+22:41:25 INFO    evtol_siting.data.rasters  下载 https://data.worldpop.org/GIS/Population/Global_2015_2030/R2024B/2020/CHN/v1/100m/constrained/chn_pop_2020_CN_100m_R2024B_v1.tif -> chn_ppp_2020_constrained.tif
+22:42:12 INFO    evtol_siting.data.rasters    2.3%  (21/920 MB)
+22:42:59 INFO    evtol_siting.data.rasters    4.6%  (42/920 MB)
+22:43:41 INFO    evtol_siting.data.rasters    6.8%  (63/920 MB)
+22:44:43 INFO    evtol_siting.data.rasters    9.1%  (84/920 MB)

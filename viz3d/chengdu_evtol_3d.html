@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>成都市 eVTOL 起降场选址 · 三维可视化</title>
+
+<!--
+  成都市 eVTOL 起降场选址 —— 三维可视化
+  =====================================================================
+  数据来源
+    · 地形与建筑底图：Cesium ion
+        - Asset 1     Cesium World Terrain（真实地形）
+        - Asset 96188 OSM Buildings（OpenStreetMap 建筑三维瓦片）
+    · 起降场选址结果：本项目四阶段流水线（GIS 筛选 → K-Means 人群分类
+      → 0-1 整数规划 → NSGA-II 多目标优化）的输出，经 viz3d.py 导出。
+
+  打开方式  ⚠️ 必须通过本地 HTTP 服务，**不能双击打开**
+    运行：  python viz3d/start_3d.py
+    脚本会自动起服务并打开浏览器。
+
+    原因：CesiumJS 用 Web Worker 解析地形与三维瓦片，Worker 由 blob: URL
+    创建。浏览器同源策略禁止 file:// 页面创建可用的 blob Worker，双击打开
+    会抛 "Failed to execute 'importScripts' on 'WorkerGlobalScope'"，
+    页面永远停在加载动画上。这是 Cesium 的固有限制，不是本页面的 bug。
+
+  依赖文件（须与本文件同目录）
+    cesium_token.js    Cesium ion access token
+    evtol_data.js      选址结果数据包（由 viz3d.py 导出）
+
+  注意
+    · OSM Buildings 在中国的覆盖率有限（OSM 高度标签在成都市中心仅
+      1.5–5.4%），三维建筑体块多为按层数默认值拉伸，**不等于真实建筑
+      高度**。本项目的屋顶型候选高度来自多源融合（含 CNBH-10m 栅格），
+      与底图建筑体块可能不一致，这是数据源差异而非错误。
+-->
+
+<link href="https://cdn.jsdelivr.net/npm/cesium@1.115.0/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/cesium@1.115.0/Build/Cesium/Cesium.js"></script>
+<script>
+  // Cesium 需要知道 Assets/Workers/Widgets 的位置才能按需加载资源
+  window.CESIUM_BASE_URL = "https://cdn.jsdelivr.net/npm/cesium@1.115.0/Build/Cesium/";
+</script>
+
+<style>
+  :root {
+    --bg: #0b0f14;
+    --panel: rgba(16, 22, 30, 0.86);
+    --border: rgba(120, 160, 200, 0.22);
+    --text: #e6edf3;
+    --dim: #8b9bab;
+    --roof: #4ade80;      /* 屋顶型 —— 绿 */
+    --ground: #60a5fa;    /* 地面型 —— 蓝 */
+    --sel: #fbbf24;       /* 选中方案 —— 琥珀 */
+    --area: #f472b6;      /* 研究区边界 —— 粉 */
+    --demand: #a78bfa;    /* 需求 —— 紫 */
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; overflow: hidden;
+               font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif; }
+  #cesium { position: absolute; inset: 0; background: var(--bg); }
+
+  #loading { position: absolute; inset: 0; display: flex; flex-direction: column;
+             align-items: center; justify-content: center; gap: 14px;
+             background: var(--bg); color: var(--text); z-index: 100;
+             transition: opacity .6s ease; }
+  #loading.hide { opacity: 0; pointer-events: none; }
+  .spinner { width: 34px; height: 34px; border: 3px solid rgba(255,255,255,.15);
+             border-top-color: var(--roof); border-radius: 50%;
+             animation: spin .9s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #loadmsg { font-size: 13px; color: var(--dim); }
+
+  .panel { position: absolute; background: var(--panel); color: var(--text);
+           border: 1px solid var(--border); border-radius: 12px;
+           backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+           box-shadow: 0 8px 32px rgba(0,0,0,.45); }
+
+  #side { top: 16px; left: 16px; width: 314px; max-height: calc(100vh - 32px);
+          overflow-y: auto; padding: 16px 16px 14px; z-index: 10; }
+  #side h1 { margin: 0 0 3px; font-size: 15px; font-weight: 600; letter-spacing: .2px; }
+  #side .sub { font-size: 11px; color: var(--dim); margin-bottom: 14px; line-height: 1.5; }
+
+  .grp { border-top: 1px solid var(--border); padding-top: 11px; margin-top: 11px; }
+  .grp:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
+  .grp > .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .9px;
+                color: var(--dim); margin-bottom: 8px; font-weight: 600; }
+
+  label.row { display: flex; align-items: center; gap: 9px; padding: 5px 6px;
+              border-radius: 7px; cursor: pointer; font-size: 12.5px;
+              transition: background .12s; }
+  label.row:hover { background: rgba(255,255,255,.05); }
+  label.row input { accent-color: var(--roof); width: 14px; height: 14px; cursor: pointer; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
+  .cnt { margin-left: auto; font-size: 10.5px; color: var(--dim);
+         font-variant-numeric: tabular-nums; }
+  /* 需求着色方式与人群图例（勾选"需求分布"后展开）*/
+  #demand_opts { margin: 2px 0 8px 24px; display: none; }
+  #demand_opts select { margin-bottom: 8px; padding: 6px 8px; font-size: 12px; }
+  .legend { display: flex; flex-direction: column; gap: 3px; }
+  .legend .it { display: flex; align-items: center; gap: 7px;
+                font-size: 10.5px; color: var(--dim); line-height: 1.35; }
+  .legend .sw { width: 10px; height: 10px; border-radius: 2px; flex: 0 0 auto; }
+  .legend .it b { color: var(--text); font-weight: 600;
+                  font-variant-numeric: tabular-nums; }
+
+  select, button { width: 100%; background: rgba(255,255,255,.07); color: var(--text);
+                   border: 1px solid var(--border); border-radius: 8px;
+                   padding: 8px 9px; font-size: 12.5px; font-family: inherit; cursor: pointer; }
+  select:focus, button:focus { outline: 1px solid var(--roof); }
+  button:hover { background: rgba(255,255,255,.13); }
+  button + button, select + button { margin-top: 7px; }
+
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+  .stat { background: rgba(255,255,255,.045); border-radius: 8px; padding: 8px 9px; }
+  .stat .k { font-size: 9.5px; color: var(--dim); text-transform: uppercase;
+             letter-spacing: .5px; }
+  .stat .v { font-size: 15px; font-weight: 600; margin-top: 2px;
+             font-variant-numeric: tabular-nums; }
+  .stat .u { font-size: 10px; color: var(--dim); font-weight: 400; }
+
+  #legend { bottom: 16px; left: 16px; padding: 11px 14px; z-index: 10;
+            display: flex; gap: 16px; flex-wrap: wrap; font-size: 11.5px; }
+  #legend .item { display: flex; align-items: center; gap: 6px; }
+  #legend .sq { width: 11px; height: 11px; border-radius: 3px; }
+
+  #note { bottom: 16px; right: 16px; max-width: 330px; padding: 10px 13px;
+          font-size: 10.5px; color: var(--dim); line-height: 1.55; z-index: 10; }
+  #note b { color: var(--text); font-weight: 600; }
+
+  #err { top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 200;
+         display: none; padding: 20px 24px; max-width: 520px; font-size: 13px;
+         line-height: 1.6; }
+  #err code { background: rgba(255,255,255,.1); padding: 2px 6px; border-radius: 4px;
+              font-size: 12px; }
+
+  @media (max-width: 760px) {
+    #side { width: calc(100vw - 32px); max-height: 46vh; }
+    #legend, #note { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="cesium"></div>
+<div id="progress" style="display:none"></div>
+
+<div id="loading">
+  <div class="spinner"></div>
+  <div id="loadmsg">正在初始化三维地球…</div>
+</div>
+
+<div id="err" class="panel">
+  <b>无法加载</b><br><br>
+  <div id="errmsg"></div>
+</div>
+
+<div id="side" class="panel">
+  <h1>成都市 eVTOL 起降场选址</h1>
+  <div class="sub">基于 GIS 与多目标优化的四阶段集成方法<br>
+    绕城高速以内 + 天府新区核心区</div>
+
+  <div class="grp">
+    <div class="lbl">图层</div>
+    <label class="row"><input type="checkbox" id="cb_area" checked>
+      <span class="dot" style="background:var(--area)"></span>研究区边界</label>
+    <label class="row"><input type="checkbox" id="cb_roof" checked>
+      <span class="dot" style="background:var(--roof)"></span>屋顶型候选<span class="cnt" id="n_roof">0</span></label>
+    <label class="row"><input type="checkbox" id="cb_ground" checked>
+      <span class="dot" style="background:var(--ground)"></span>地面型候选<span class="cnt" id="n_ground">0</span></label>
+    <label class="row"><input type="checkbox" id="cb_sel" checked>
+      <span class="dot" style="background:var(--sel)"></span>选址方案<span class="cnt" id="n_sel">0</span></label>
+    <label class="row"><input type="checkbox" id="cb_cov">
+      <span class="dot" style="background:#fbbf24;opacity:.5"></span>接驳覆盖范围</label>
+    <label class="row"><input type="checkbox" id="cb_demand">
+      <span class="dot" style="background:var(--demand)"></span>需求分布<span class="cnt" id="n_dem">0</span></label>
+    <div id="demand_opts">
+      <select id="sel_demcolor">
+        <option value="group">按收入人群着色</option>
+        <option value="intensity">按需求强度着色</option>
+      </select>
+      <div id="dem_legend"></div>
+    </div>
+    <label class="row"><input type="checkbox" id="cb_bldg" checked>
+      <span class="dot" style="background:#94a3b8"></span>三维建筑底图</label>
+  </div>
+
+  <div class="grp">
+    <div class="lbl">选址方案</div>
+    <select id="sel_solution"></select>
+    <div class="stats">
+      <div class="stat"><div class="k">起降场</div><div class="v" id="s_sites">—</div></div>
+      <div class="stat"><div class="k">总成本</div><div class="v" id="s_cost">—<span class="u"> 亿元</span></div></div>
+      <div class="stat"><div class="k">需求覆盖</div><div class="v" id="s_dcov">—<span class="u"> %</span></div></div>
+      <div class="stat"><div class="k">人口覆盖</div><div class="v" id="s_pcov">—<span class="u"> %</span></div></div>
+    </div>
+  </div>
+
+  <div class="grp">
+    <div class="lbl">视角</div>
+    <button id="btn_city">俯瞰全城</button>
+    <button id="btn_center">天府广场（市中心）</button>
+    <button id="btn_sel">聚焦选址方案</button>
+  </div>
+</div>
+
+<div id="legend" class="panel">
+  <div class="item"><span class="sq" style="background:var(--roof)"></span>屋顶型起降场</div>
+  <div class="item"><span class="sq" style="background:var(--ground)"></span>地面型起降场</div>
+  <div class="item"><span class="sq" style="background:var(--sel)"></span>选中方案</div>
+  <div class="item"><span class="sq" style="background:var(--area)"></span>研究区</div>
+</div>
+
+<div id="note" class="panel">
+  <b>数据说明</b>：地形与建筑底图来自 Cesium ion（World Terrain / OSM Buildings）；
+  起降场选址结果为项目流水线输出。OSM 在中国的建筑高度覆盖有限，
+  三维体块多为按层数默认值拉伸，与本项目融合后的候选高度可能不一致。
+</div>
+
+<script src="cesium_token.js"></script>
+<script src="evtol_data.js"></script>
+<script>
+"use strict";
+
+// =====================================================================
+// 0. 前置检查
+// =====================================================================
+const TOKEN = window.CESIUM_ION_TOKEN;
+const DATA  = window.EVTOL_DATA;
+
+function fatal(msg) {
+  document.getElementById("loading").classList.add("hide");
+  document.getElementById("errmsg").innerHTML = msg;
+  document.getElementById("err").style.display = "block";
+}
+// 进度写入 #progress，便于用 --dump-dom 诊断（三维页面出错时
+// 加载遮罩会一直盖着，看不出卡在哪一步）
+let _step = 0;
+function setMsg(t) {
+  document.getElementById("loadmsg").textContent = t;
+  document.getElementById("progress").textContent = `[${++_step}] ${t}`;
+}
+// 未捕获异常必须显式暴露：否则加载遮罩会一直盖着，用户只看到"卡住"，
+// 拿不到任何可排查的信息。
+window.addEventListener("error", e => {
+  const m = e.message || String(e.error || e);
+  document.getElementById("progress").textContent = `[ERROR] ${m} @ ${e.filename}:${e.lineno}`;
+  fatal(`渲染出错：<br><br><code>${m}</code><br><br>
+        位置：<code>${(e.filename || "").split("/").pop()}:${e.lineno}</code>`);
+});
+window.addEventListener("unhandledrejection", e => {
+  const m = (e.reason && (e.reason.message || e.reason)) || "未知 Promise 拒绝";
+  document.getElementById("progress").textContent = `[REJECT] ${m}`;
+  fatal(`资源加载被拒绝：<br><br><code>${m}</code>`);
+});
+
+if (!TOKEN) {
+  fatal("缺少 Cesium ion token。请在 <code>viz3d/cesium_token.js</code> 中设置：<br><br>" +
+        "<code>window.CESIUM_ION_TOKEN = \"你的token\";</code><br><br>" +
+        "可在 <a href='https://ion.cesium.com/tokens' target='_blank' style='color:#4ade80'>ion.cesium.com/tokens</a> 创建（免费）。");
+}
+if (!DATA) {
+  fatal("缺少数据文件 <code>evtol_data.js</code>。<br><br>" +
+        "请先运行：<br><code>python -m evtol_siting.export_3d</code>");
+}
+
+if (TOKEN && DATA) {
+  Cesium.Ion.defaultAccessToken = TOKEN;
+  main();
+}
+
+// =====================================================================
+// 1. 主流程
+// =====================================================================
+async function main() {
+  // ---- 资源标识 ----
+  // 1     Cesium World Terrain
+  // 96188 OSM Buildings (3D Tiles)
+  const TERRAIN_ASSET = 1;
+  const BUILDINGS_ASSET = 96188;
+
+  // 研究区中心（由数据自动推断，避免硬编码）
+  const bbox = computeBBox();
+
+  // ---- 创建 Viewer ----
+  const viewer = new Cesium.Viewer("cesium", {
+    terrain: Cesium.Terrain.fromWorldTerrain({ requestWaterMask: false }),
+    animation: false, timeline: false, geocoder: false,
+    homeButton: false, sceneModePicker: false, baseLayerPicker: false,
+    navigationHelpButton: false, fullscreenButton: false, infoBox: false,
+    selectionIndicator: false, shouldAnimate: false,
+    // 成都位于东八区，用北京时间显示昼夜光照更符合直觉
+    baseLayer: Cesium.ImageryLayer.fromProviderAsync(
+      Cesium.IonImageryProvider.fromAssetId(2)   // Bing Maps Aerial（ion 默认底图）
+    ),
+  });
+
+  // 关闭默认的版权信息条（我们在页脚自行标注数据来源）
+  viewer.cesiumWidget.creditContainer.style.display = "none";
+  viewer.scene.globe.enableLighting = false;
+  viewer.scene.fog.enabled = true;
+  viewer.scene.skyAtmosphere.show = true;
+
+  // ---- 相机初始位置 ----
+  // 俯角取 -78°（接近正俯视）而非 -45°~-52°：Cesium 用 Rectangle 定位时
+  // 会把**视野内的全部远景**一起框进来，俯角越平、相机退得越远，研究区
+  // 在画面里就越小。接近正俯视能让研究区填满画面，用户再自行压角看立体。
+  setMsg("正在定位研究区…");
+  viewer.camera.setView({
+    destination: Cesium.Rectangle.fromDegrees(bbox.west, bbox.south, bbox.east, bbox.north),
+    orientation: { heading: 0, pitch: Cesium.Math.toRadians(-78), roll: 0 },
+  });
+
+  // =====================================================================
+  // 2. 图层构建
+  //
+  // 顺序很重要：**先画数据，再挂底图**。
+  // 三维建筑底图（ion 的 OSM Buildings 瓦片）体积大、首次加载可能要几十秒；
+  // 如果 await 在数据图层之前，底图慢时页面会一直停在加载动画上，用户看不到
+  // 任何东西。选址结果才是主角，底图是背景，因此底图改为**非阻塞**加载——
+  // 失败或超时都不影响结果展示。
+  // =====================================================================
+  const layers = {
+    area:   new Cesium.CustomDataSource("study_area"),
+    sel:    new Cesium.CustomDataSource("selected"),
+    cov:    new Cesium.CustomDataSource("coverage"),
+    demand: new Cesium.CustomDataSource("demand"),
+  };
+  Object.values(layers).forEach(ds => viewer.dataSources.add(ds));
+
+  // ---- 2.1 研究区边界 ----
+  if (DATA.study_area) {
+    const rings = DATA.study_area.type === "Polygon"
+      ? DATA.study_area.coordinates
+      : DATA.study_area.coordinates.flat();
+    rings.forEach((ring, i) => {
+      const flat = ring.flat();
+      layers.area.entities.add({
+        name: "研究区",
+        polygon: {
+          hierarchy: Cesium.Cartesian3.fromDegreesArray(flat),
+          material: Cesium.Color.fromCssColorString("#f472b6").withAlpha(0.07),
+          outline: true, outlineColor: Cesium.Color.fromCssColorString("#f472b6"),
+          outlineWidth: 2,
+          // 贴地：避免多边形因地形起伏而穿模
+          classificationType: Cesium.ClassificationType.TERRAIN,
+          heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+        },
+      });
+    });
+  }
+
+  // ---- 2.2 候选起降场 ----
+  // 候选点可达数千个，必须用 PointPrimitiveCollection 而不是逐个 Entity：
+  // 每个 Entity 都带完整的属性系统与事件开销，数千个会明显掉帧。
+  //
+  // 注意 PointPrimitiveCollection 要加到 **viewer.scene.primitives**，
+  // 不能加到 CustomDataSource 上——CustomDataSource 只有 entities，
+  // 没有 primitives 属性（写 ds.primitives.add(...) 会抛
+  // "Cannot read properties of undefined"）。因此这两层的显隐由
+  // 集合自身的 .show 控制，而不是 DataSource.show。
+  const roofPts = viewer.scene.primitives.add(new Cesium.PointPrimitiveCollection());
+  const groundPts = viewer.scene.primitives.add(new Cesium.PointPrimitiveCollection());
+  fillPoints(roofPts,   DATA.candidates.rooftop, "#4ade80", true);
+  fillPoints(groundPts, DATA.candidates.ground,  "#60a5fa", false);
+
+  function fillPoints(coll, items, color, isRoof) {
+    const col = Cesium.Color.fromCssColorString(color);
+    const dark = Cesium.Color.fromCssColorString("#0b0f14");
+    items.forEach(c => {
+      // 屋顶型抬到其建筑高度处，地面型贴地形——三维里能一眼看出两类
+      // 设施的空间差异（屋顶型悬在楼顶，地面型落在地面）
+      const h = isRoof ? Math.max(c.height_m || 0, 4) : 4;
+      coll.add({
+        position: Cesium.Cartesian3.fromDegrees(c.lon, c.lat, h),
+        color: col,
+        pixelSize: isRoof ? 7 : 6,
+        outlineColor: dark,
+        outlineWidth: 1,
+        // 关闭深度测试，避免候选点被三维建筑体块遮挡而"消失"
+        disableDepthTestDistance: Number.POSITIVE_INFINITY,
+      });
+    });
+    return coll;
+  }
+
+  // ---- 2.3 需求分布（按需求量拉伸的柱体）----
+  // 两种着色口径：
+  //   group     —— 按收入人群类，配色与论文图 5 完全一致（按**月收入升序**
+  //                分配色序，故恒为"低收入 → 高收入"），图例给出收入、采用
+  //                概率与单元数；
+  //   intensity —— 按需求量本身着色，单色、实心度随需求量上升。
+  // 默认按人群着色，因为本文的公平性论证正是建立在"高收入类单元极少却
+  // 采用概率最高"这一空间事实之上。
+  const GROUP_COLORS = ["#56B4E9", "#0072B2", "#009E73", "#F0E442",
+                        "#E69F00", "#CC79A7", "#D55E00"];
+  const CLUSTERS = (DATA.clusters || []).slice().sort(
+    (a, b) => (a.monthly_income_cny || 0) - (b.monthly_income_cny || 0));
+  const GROUP_OF = new Map(
+    CLUSTERS.map((c, i) => [c.cluster, GROUP_COLORS[i % GROUP_COLORS.length]]));
+
+  const demandDs = layers.demand;
+  function demandMax() {
+    return Math.max(1e-6, ...DATA.demand.map(d => d.demand));
+  }
+
+  function renderDemand(mode) {
+    demandDs.entities.removeAll();
+    const dmax = demandMax();
+    DATA.demand.forEach(d => {
+      // 高度按需求量归一化到 0–1200 m：太矮看不见，太高会盖住城市
+      const t = Math.min(Math.sqrt(d.demand / dmax), 1);
+      const h = 80 + t * 1120;
+      const base = Cesium.Color.fromCssColorString(
+        mode === "group" ? (GROUP_OF.get(d.cluster) || "#a78bfa") : "#a78bfa");
+      demandDs.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(d.lon, d.lat, h / 2),
+        cylinder: {
+          length: h, topRadius: 170, bottomRadius: 170,
+          material: base.withAlpha(mode === "group" ? 0.42 : 0.16 + 0.34 * t),
+          outline: false,
+        },
+      });
+    });
+  }
+
+  function buildLegend() {
+    const box = document.getElementById("dem_legend");
+    box.innerHTML = "";
+    CLUSTERS.forEach((c, i) => {
+      const el = document.createElement("div");
+      el.className = "it";
+      const inc = c.monthly_income_cny
+        ? (c.monthly_income_cny / 1000).toFixed(1) + "k" : "—";
+      const p = c.p_evtol ? (c.p_evtol * 100).toFixed(2) + "%" : "—";
+      el.innerHTML =
+        '<span class="sw" style="background:' +
+        GROUP_COLORS[i % GROUP_COLORS.length] + '"></span>C' + c.cluster +
+        ' <b>¥' + inc + '</b> · ' + p + ' · ' + c.n_cells + ' 单元';
+      box.appendChild(el);
+    });
+  }
+
+  renderDemand("group");
+  buildLegend();
+
+  // =====================================================================
+  // 3. 方案切换
+  // =====================================================================
+  const selDs = layers.sel;
+  let candById = new Map();
+  [...DATA.candidates.rooftop, ...DATA.candidates.ground]
+    .forEach(c => candById.set(c.id, c));
+
+  const selSelect = document.getElementById("sel_solution");
+  DATA.solutions.forEach((s, i) => {
+    const o = document.createElement("option");
+    o.value = String(i);
+    o.textContent = `${s.label} · ${s.n_sites} 站`;
+    selSelect.appendChild(o);
+  });
+
+  function renderSolution(idx) {
+    selDs.entities.removeAll();
+    layers.cov.entities.removeAll();
+
+    const s = DATA.solutions[idx];
+    if (!s) return;
+
+    s.cand_ids.forEach(id => {
+      const c = candById.get(id);
+      if (!c) return;
+      const isRoof = (c.height_m || 0) > 0;
+      const h = isRoof ? Math.max(c.height_m, 4) : 6;
+
+      // 选中站点：比候选点更大，加描边，并带编号标签
+      selDs.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(c.lon, c.lat, h),
+        point: {
+          pixelSize: 15,
+          color: Cesium.Color.fromCssColorString("#fbbf24"),
+          outlineColor: Cesium.Color.WHITE, outlineWidth: 2,
+          disableDepthTestDistance: Number.POSITIVE_INFINITY,
+        },
+        label: {
+          text: `V${id}`,
+          font: "600 12px 'Segoe UI', 'Microsoft YaHei', sans-serif",
+          fillColor: Cesium.Color.WHITE,
+          outlineColor: Cesium.Color.fromCssColorString("#0b0f14"),
+          outlineWidth: 3, style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+          pixelOffset: new Cesium.Cartesian2(0, -22),
+          disableDepthTestDistance: Number.POSITIVE_INFINITY,
+          scaleByDistance: new Cesium.NearFarScalar(3e3, 1.0, 6e4, 0.55),
+        },
+        description: `<b>${isRoof ? "屋顶型" : "地面型"}起降场</b><br>
+          编号 V${id}<br>
+          建设成本：${(c.cost / 1e6).toFixed(0)} 百万元<br>
+          设计容量：${c.capacity.toFixed(0)} 架次/小时
+          ${isRoof ? `<br>建筑高度：${c.height_m} m<br>可用屋顶：${c.roof_m2} m²
+                      <br>高度来源：${c.height_source}` : ""}`,
+      });
+
+      // 接驳覆盖圈（三维空间里的扁圆柱，直观展示服务范围）
+      const R = DATA.meta.access_radius_m || 3000;
+      layers.cov.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(c.lon, c.lat, 30),
+        cylinder: {
+          length: 60, topRadius: R, bottomRadius: R,
+          material: Cesium.Color.fromCssColorString("#fbbf24").withAlpha(0.09),
+          outline: true,
+          outlineColor: Cesium.Color.fromCssColorString("#fbbf24").withAlpha(0.35),
+        },
+      });
+    });
+
+    // 面板统计
+    const cov = s.coverage || {};
+    document.getElementById("s_sites").textContent = s.n_sites;
+    document.getElementById("s_cost").innerHTML =
+      (s.total_cost / 1e8).toFixed(1) + '<span class="u"> 亿元</span>';
+    document.getElementById("s_dcov").innerHTML =
+      (cov.demand_coverage_pct ?? NaN).toFixed(1) + '<span class="u"> %</span>';
+    document.getElementById("s_pcov").innerHTML =
+      (cov.population_coverage_pct ?? NaN).toFixed(1) + '<span class="u"> %</span>';
+  }
+
+  selSelect.addEventListener("change", e => renderSolution(Number(e.target.value)));
+  if (DATA.solutions.length) renderSolution(0);
+
+  // =====================================================================
+  // 4. 图层开关
+  // =====================================================================
+  const bind = (id, target) => {
+    const el = document.getElementById(id);
+    el.addEventListener("change", () => { target.show = el.checked; });
+  };
+  bind("cb_area",   layers.area);
+  bind("cb_sel",    layers.sel);
+  // 候选点两层是场景级 PointPrimitiveCollection，不是 DataSource，
+  // 显隐要用集合自身的 .show
+  document.getElementById("cb_roof").addEventListener("change", e => {
+    roofPts.show = e.target.checked;
+  });
+  document.getElementById("cb_ground").addEventListener("change", e => {
+    groundPts.show = e.target.checked;
+  });
+  bind("cb_cov",    layers.cov);
+  bind("cb_demand", layers.demand);
+
+  // 需求着色方式切换：按收入人群 / 按需求强度
+  document.getElementById("sel_demcolor").addEventListener("change", e => {
+    renderDemand(e.target.value);
+    document.getElementById("dem_legend").style.display =
+      e.target.value === "group" ? "flex" : "none";
+  });
+  // 仅当勾选"需求分布"时展开着色选项与人群图例
+  document.getElementById("cb_demand").addEventListener("change", e => {
+    document.getElementById("demand_opts").style.display =
+      e.target.checked ? "block" : "none";
+  });
+
+  document.getElementById("cb_cov").checked = false;
+  layers.cov.show = false;
+  layers.demand.show = false;
+
+  // 计数
+  document.getElementById("n_roof").textContent   = DATA.candidates.rooftop.length;
+  document.getElementById("n_ground").textContent = DATA.candidates.ground.length;
+  document.getElementById("n_dem").textContent    = DATA.demand.length;
+  document.getElementById("n_sel").textContent    = DATA.solutions[0]?.n_sites ?? 0;
+
+  // ---- 三维建筑底图（非阻塞）----
+  let buildingsTileset = null;
+  const cbBldg = document.getElementById("cb_bldg");
+  Cesium.Cesium3DTileset.fromIonAssetId(BUILDINGS_ASSET, {
+    maximumScreenSpaceError: 16,
+  }).then(ts => {
+    buildingsTileset = ts;
+    ts.style = new Cesium.Cesium3DTileStyle({ color: "color('#9aa8b8', 0.85)" });
+    viewer.scene.primitives.add(ts);
+    cbBldg.disabled = false;
+    cbBldg.checked = true;
+    console.log("三维建筑底图加载完成");
+  }).catch(e => {
+    // 底图失败不影响选址结果的展示——只是少了一层背景
+    console.warn("三维建筑底图加载失败（不影响选址结果展示）：", e);
+    cbBldg.checked = false;
+    cbBldg.disabled = true;
+  });
+  // 底图未就绪前先禁用开关，避免用户切换时报错
+  cbBldg.disabled = true;
+  cbBldg.addEventListener("change", () => {
+    if (buildingsTileset) buildingsTileset.show = cbBldg.checked;
+  });
+
+  // =====================================================================
+  // 5. 视角控制
+  // =====================================================================
+  const fly = (west, south, east, north, pitch = -50) =>
+    viewer.camera.flyTo({
+      destination: Cesium.Rectangle.fromDegrees(west, south, east, north),
+      orientation: { heading: 0, pitch: Cesium.Math.toRadians(pitch), roll: 0 },
+      duration: 2.0,
+    });
+
+  document.getElementById("btn_city").onclick   = () =>
+    fly(bbox.west, bbox.south, bbox.east, bbox.north);
+  document.getElementById("btn_center").onclick = () =>
+    fly(104.045, 30.630, 104.085, 30.675, -70);
+  document.getElementById("btn_sel").onclick    = () => {
+    const s = DATA.solutions[Number(selSelect.value)];
+    if (!s || !s.cand_ids.length) return;
+    const cs = s.cand_ids.map(id => candById.get(id)).filter(Boolean);
+    const w = Math.min(...cs.map(c => c.lon)), e = Math.max(...cs.map(c => c.lon));
+    const so = Math.min(...cs.map(c => c.lat)), n = Math.max(...cs.map(c => c.lat));
+    const pad = 0.012;
+    fly(w - pad, so - pad, e + pad, n + pad, -72);
+  };
+
+  // =====================================================================
+  // 6. 完成
+  // =====================================================================
+  function computeBBox() {
+    let w = 180, e = -180, s = 90, n = -90;
+    const all = [...DATA.candidates.rooftop, ...DATA.candidates.ground];
+    if (!all.length) return { west: 103.9, south: 30.4, east: 104.25, north: 30.8 };
+    all.forEach(c => {
+      if (c.lon < w) w = c.lon; if (c.lon > e) e = c.lon;
+      if (c.lat < s) s = c.lat; if (c.lat > n) n = c.lat;
+    });
+    const px = (e - w) * 0.06, py = (n - s) * 0.06;
+    return { west: w - px, south: s - py, east: e + px, north: n + py };
+  }
+
+  setMsg("就绪");
+  setTimeout(() => document.getElementById("loading").classList.add("hide"), 350);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+# 基于 GIS 与多目标优化的 eVTOL 起降场选址研究 —— 依赖
+# 安装: pip install -r requirements.txt
+# 实测环境: Python 3.11 / Windows 11；Linux 与 macOS 应同样可用
+
+# --- 科学计算基础 ---
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11
+pyyaml>=6.0
+
+# --- 地理空间 ---
+geopandas>=0.14        # 矢量数据处理
+shapely>=2.0           # 几何运算
+pyproj>=3.6            # 坐标变换
+fiona>=1.9             # 矢量 IO
+rasterio>=1.3          # 栅格 IO、坡度计算、分区统计
+
+# --- 机器学习 / 优化 ---
+scikit-learn>=1.3      # K-means 与轮廓系数
+pulp>=3.3              # 优化建模层。需含 pulp.apis.highs_api（HiGHS 接口）；
+                       #   实测 3.3.2。旧版若无该接口，基线会退回 CBC（会告警）。
+highspy>=1.7           # HiGHS 求解器本体。**必需，不是可选**——见下方说明。
+pymoo>=0.6             # NSGA-II 交叉验证（可选但推荐）
+
+# ⚠ 关于求解器：为什么 highspy 是必需依赖
+# -----------------------------------------------------------------------------
+# 单目标基线（baselines.py）默认用 HiGHS 求解。四个经典模型里，p-中位在成都算例
+# 上有 **327 541 个分配变量 + 2 519 个未服务变量**，实测只有 HiGHS 能在时限内
+# 求解到**证明最优**；同一形式交给 CBC 会跑满时限仍报 `Not Solved`、拿不到解。
+#
+# 因此：**装不上 highspy 时，p-中位基线会整体缺失**，论文 §5.7.1 与 §5.8 的
+# p-中位各行将无法复现（`baselines.py` 会告警并退回 CBC，但结果不可用）。
+# 这不是"可选优化"，是复现的必要条件。
+#
+# 实测版本（论文报告口径）：Python 3.11.0 / pulp 3.3.2 / HiGHS 1.15.1
+# 若要显式使用 CBC 做对照复现，设环境变量 EVTOL_BASELINE_SOLVER=cbc。
+
+# --- 网络与数据获取 ---
+requests>=2.31         # Overpass API
+
+# --- 制图 ---
+matplotlib>=3.8
+contextily>=1.5        # 底图瓦片（可选）
+mapclassify>=2.6       # 分级设色（choropleth）
+
+# --- 解释 ---
+# osmnx 未列入必需依赖：本项目自行实现 Overpass 分块下载（见 data/osm.py），
+# 以避免 osmnx 对特定网络环境的强依赖。如需使用 osmnx 的路网简化功能，
+# 可另行 pip install osmnx。

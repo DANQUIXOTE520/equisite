@@ -1,0 +1,218 @@
+{
+  "stage1": {
+    "n_candidates": 1332,
+    "n_rooftop": 256,
+    "n_ground": 1076,
+    "mean_cost_cny": 53668001.167310506,
+    "candidate_summary": [
+      {
+        "facility_type": "ground",
+        "n": 1076,
+        "height_mean_m": 0.0,
+        "cost_mean_cny": 57000000.0,
+        "cost_total_cny": 61332000000.0
+      },
+      {
+        "facility_type": "rooftop",
+        "n": 256,
+        "height_mean_m": 36.2,
+        "cost_mean_cny": 39663194.0,
+        "cost_total_cny": 10153777555.0
+      }
+    ]
+  },
+  "population_comparison": [
+    {
+      "method": "dasymetric",
+      "total_population": 7712263.157209303,
+      "n_nonzero_cells": 2517,
+      "mean_per_cell": 3061.636823028703,
+      "std_per_cell": 2504.2387817027425,
+      "cv": 0.8179411623438215,
+      "max_cell": 12360.63752746582,
+      "top1pct_share": 0.032418162472072846,
+      "gini": 0.45811878161172087
+    },
+    {
+      "method": "uniform",
+      "total_population": 7712263.157209303,
+      "n_nonzero_cells": 2517,
+      "mean_per_cell": 3061.636823028703,
+      "std_per_cell": 2504.2387817027425,
+      "cv": 0.8179411623438215,
+      "max_cell": 12360.63752746582,
+      "top1pct_share": 0.032418162472072846,
+      "gini": 0.45811878161172087
+    }
+  ],
+  "stage2": {
+    "n_clusters": 7,
+    "total_population": 7712263.157209303,
+    "total_demand_per_day": 48719.67410185081,
+    "cluster_profile": [
+      {
+        "cluster": 3,
+        "n_cells": 1391,
+        "population": 2642033.5168341342,
+        "income_mean": 0.0,
+        "poi_density_mean": 0.0,
+        "trip_rate": 0.005642,
+        "monthly_income_cny": 1868.0,
+        "vot_cny_per_h": 5.37,
+        "p_evtol": 0.05642,
+        "demand_trips_per_day": 14906.353101978186,
+        "k_selection": "silhouette"
+      },
+      {
+        "cluster": 0,
+        "n_cells": 327,
+        "population": 940327.0619954877,
+        "income_mean": 1.533906402880068,
+        "poi_density_mean": 5.321100917431193,
+        "trip_rate": 0.005974,
+        "monthly_income_cny": 2799.0,
+        "vot_cny_per_h": 8.04,
+        "p_evtol": 0.05974,
+        "demand_trips_per_day": 5617.513868361043,
+        "k_selection": "silhouette"
+      },
+      {
+        "cluster": 5,
+        "n_cells": 321,
+        "population": 1318766.7368114311,
+        "income_mean": 2.598605268921616,
+        "poi_density_mean": 13.059190031152648,
+        "trip_rate": 0.006283,
+        "monthly_income_cny": 3613.0,
+        "vot_cny_per_h": 10.38,
+        "p_evtol": 0.06283,
+        "demand_trips_per_day": 8285.811407386222,
+        "k_selection": "silhouette"
+      },
+      {
+        "cluster": 2,
+        "n_cells": 260,
+        "population": 1389814.0930910609,
+        "income_mean": 3.361789080140872,
+        "poi_density_mean": 29.49230769230769,
+        "trip_rate": 0.006638,
+        "monthly_income_cny": 4500.0,
+        "vot_cny_per_h": 12.93,
+        "p_evtol": 0.06638,
+        "demand_trips_per_day": 9225.585949938462,
+        "k_selection": "silhouette"
+      },
+      {
+        "cluster": 4,
+        "n_cells": 145,
+        "population": 908115.2678033989,
+        "income_mean": 4.000721252605107,
+        "poi_density_mean": 55.172413793103445,
+        "trip_rate": 0.007112,
+        "monthly_income_cny": 5605.0,
+        "vot_cny_per_h": 16.11,
+        "p_evtol": 0.07112,
+        "demand_trips_per_day": 6458.5157846177735,
+        "k_selection": "silhouette"
+      },
+      {
+        "cluster": 6,
+        "n_cells": 62,
+        "population": 421404.3100385666,
+        "income_mean": 4.560623476605083,
+        "poi_density_mean": 96.0,
+        "trip_rate": 0.007876,
+        "monthly_income_cny": 7236.0,
+        "vot_cny_per_h": 20.79,
+        "p_evtol": 0.07876,
+        "demand_trips_per_day": 3318.9803458637502,
+        "k_selection": "silhouette"
+      },
+      {
+        "cluster": 1,
+        "n_cells": 13,
+        "population": 91802.17063522339,
+        "income_mean": 5.021334151621387,
+        "poi_density_mean": 170.46153846153845,
+        "trip_rate": 0.009879,
+        "monthly_income_cny": 10840.0,
+        "vot_cny_per_h": 31.15,
+        "p_evtol": 0.09879,
+        "demand_trips_per_day": 906.9136437053719,
+        "k_selection": "silhouette"
+      }
+    ]
+  },
+  "stage3": {
+    "scenarios": [
+      {
+        "name": "cost_priority",
+        "status": "Optimal",
+        "n_sites": 11,
+        "objective": 348011221.58,
+        "total_cost_cny": 348011222.0,
+        "solve_time_s": 0.4,
+        "coverage_cells_covered": 2120,
+        "coverage_cells_total": 2519,
+        "coverage_cell_coverage_pct": 84.1604,
+        "coverage_demand_covered": 47316.6971,
+        "coverage_demand_total": 48719.6741,
+        "coverage_demand_coverage_pct": 97.1203,
+        "coverage_population_covered": 7466766.3551,
+        "coverage_population_total": 7712263.1572,
+        "coverage_population_coverage_pct": 96.8168,
+        "coverage_core_coverage_pct": 100.0,
+        "coverage_n_core_cells": 1008,
+        "coverage_feasible": true
+      },
+      {
+        "name": "coverage_priority",
+        "status": "Optimal",
+        "n_sites": 10,
+        "objective": 10.0,
+        "total_cost_cny": 513929069.0,
+        "solve_time_s": 0.4,
+        "coverage_cells_covered": 2069,
+        "coverage_cells_total": 2519,
+        "coverage_cell_coverage_pct": 82.1358,
+        "coverage_demand_covered": 47031.2141,
+        "coverage_demand_total": 48719.6741,
+        "coverage_demand_coverage_pct": 96.5343,
+        "coverage_population_covered": 7417584.6967,
+        "coverage_population_total": 7712263.1572,
+        "coverage_population_coverage_pct": 96.1791,
+        "coverage_core_coverage_pct": 100.0,
+        "coverage_n_core_cells": 1008,
+        "coverage_feasible": true
+      }
+    ]
+  },
+  "stage4": {
+    "n_pareto": 100,
+    "n_evaluations": 6168,
+    "final_hypervolume": 445131495.5721314,
+    "memo_size": 913
+  },
+  "pareto_metrics_range": {
+    "demand_coverage_pct": [
+      97.12030701795949,
+      99.98914742852952
+    ],
+    "total_cost_cny": [
+      348011221.5812531,
+      19165427181.40158
+    ],
+    "mean_access_time_min": [
+      5.318051338195801,
+      9.886563301086426
+    ],
+    "worst_group_access_time_min": [
+      6.2356123233895,
+      10.964500507271921
+    ],
+    "equity_gini": [
+      0.006524538008848978,
+      0.044821511013827385
+    ]
+  }
+}

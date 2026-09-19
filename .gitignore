@@ -1,0 +1,46 @@
+# ---------------------------------------------------------------------------
+# Personal credential. Never commit.
+# README section 9 explains how to create these locally; scripts/export_3d.py
+# writes the second one from the first.
+# ---------------------------------------------------------------------------
+viz3d/cesium_token.local.txt
+viz3d/cesium_token.js
+
+# ---------------------------------------------------------------------------
+# Third-party input data. Downloaded by `run_all.py --fetch-only`, not
+# redistributed here: OSM, WorldPop, CNBH-10 m, Copernicus DEM, NPP-VIIRS.
+# About 13 GB of raw tiles plus ~114 MB of derived rasters.
+# ---------------------------------------------------------------------------
+data/raw/
+data/interim/
+outputs/data_disttest/
+outputs/data_network/
+
+# ---------------------------------------------------------------------------
+# Working notes and one-off artefacts, kept out of the published archive.
+# ---------------------------------------------------------------------------
+_过程残留/
+审计记录/
+RUN_STATE.md
+
+# Superseded calibration runs (candidate-set vintage before the layer-assembly fix)
+outputs_v1332_backup/
+outputs_cq/
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.bak
+*.bak_*
+*.before_rewrite
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# OS / editor
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

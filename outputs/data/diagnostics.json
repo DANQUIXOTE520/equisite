@@ -1,0 +1,200 @@
+{
+  "stage1": {
+    "n_candidates": 1315,
+    "n_rooftop": 264,
+    "n_ground": 1051,
+    "mean_cost_cny": 53793427.619991615,
+    "candidate_summary": [
+      {
+        "facility_type": "ground",
+        "n": 1051,
+        "height_mean_m": 0.0,
+        "cost_mean_cny": 57000000.0,
+        "cost_total_cny": 59907000000.0
+      },
+      {
+        "facility_type": "rooftop",
+        "n": 264,
+        "height_mean_m": 36.0,
+        "cost_mean_cny": 41027869.0,
+        "cost_total_cny": 10831357320.0
+      }
+    ]
+  },
+  "population_comparison": [
+    {
+      "method": "dasymetric",
+      "total_population": 7712263.157209303,
+      "n_nonzero_cells": 2517,
+      "mean_per_cell": 3061.636823028703,
+      "std_per_cell": 2504.2387817027425,
+      "cv": 0.8179411623438215,
+      "max_cell": 12360.63752746582,
+      "top1pct_share": 0.032418162472072846,
+      "gini": 0.45811878161172087
+    },
+    {
+      "method": "uniform",
+      "total_population": 7712263.157209303,
+      "n_nonzero_cells": 2517,
+      "mean_per_cell": 3061.636823028703,
+      "std_per_cell": 2504.2387817027425,
+      "cv": 0.8179411623438215,
+      "max_cell": 12360.63752746582,
+      "top1pct_share": 0.032418162472072846,
+      "gini": 0.45811878161172087
+    }
+  ],
+  "stage2": {
+    "n_clusters": 5,
+    "total_population": 7712263.157209303,
+    "total_demand_per_day": 50338.9148896497,
+    "cluster_profile": [
+      {
+        "cluster": 3,
+        "n_cells": 911,
+        "population": 1274286.230915293,
+        "income_mean": 15.458149428252348,
+        "poi_density_mean": 1.2425905598243687,
+        "trip_rate": 0.005645,
+        "monthly_income_cny": 1877.0,
+        "vot_cny_per_h": 5.39,
+        "p_evtol": 0.05645,
+        "demand_trips_per_day": 7193.3457735168295,
+        "k_selection": "silhouette"
+      },
+      {
+        "cluster": 0,
+        "n_cells": 916,
+        "population": 2953989.658831328,
+        "income_mean": 31.6675803524,
+        "poi_density_mean": 4.310043668122271,
+        "trip_rate": 0.006033,
+        "monthly_income_cny": 2956.0,
+        "vot_cny_per_h": 8.49,
+        "p_evtol": 0.06033,
+        "demand_trips_per_day": 17821.419611729405,
+        "k_selection": "silhouette"
+      },
+      {
+        "cluster": 1,
+        "n_cells": 311,
+        "population": 1804356.9392246208,
+        "income_mean": 33.630299825249494,
+        "poi_density_mean": 41.27331189710611,
+        "trip_rate": 0.006455,
+        "monthly_income_cny": 4049.0,
+        "vot_cny_per_h": 11.64,
+        "p_evtol": 0.06455,
+        "demand_trips_per_day": 11647.124042694926,
+        "k_selection": "silhouette"
+      },
+      {
+        "cluster": 2,
+        "n_cells": 81,
+        "population": 547882.1841986459,
+        "income_mean": 40.35091841347956,
+        "poi_density_mean": 106.12345679012346,
+        "trip_rate": 0.007085,
+        "monthly_income_cny": 5546.0,
+        "vot_cny_per_h": 15.94,
+        "p_evtol": 0.07085,
+        "demand_trips_per_day": 3881.7452750474063,
+        "k_selection": "silhouette"
+      },
+      {
+        "cluster": 4,
+        "n_cells": 300,
+        "population": 1131748.1440394148,
+        "income_mean": 50.690864361270144,
+        "poi_density_mean": 10.853333333333333,
+        "trip_rate": 0.008655,
+        "monthly_income_cny": 8736.0,
+        "vot_cny_per_h": 25.1,
+        "p_evtol": 0.08655,
+        "demand_trips_per_day": 9795.280186661135,
+        "k_selection": "silhouette"
+      }
+    ]
+  },
+  "stage3": {
+    "scenarios": [
+      {
+        "name": "cost_priority",
+        "status": "Optimal",
+        "n_sites": 11,
+        "objective": 314333127.38,
+        "total_cost_cny": 314333127.0,
+        "solve_time_s": 0.55,
+        "coverage_cells_covered": 2055,
+        "coverage_cells_total": 2519,
+        "coverage_cell_coverage_pct": 81.58,
+        "coverage_demand_covered": 48389.7738,
+        "coverage_demand_total": 50338.9149,
+        "coverage_demand_coverage_pct": 96.128,
+        "coverage_population_covered": 7388609.9984,
+        "coverage_population_total": 7712263.1572,
+        "coverage_population_coverage_pct": 95.8034,
+        "coverage_core_coverage_pct": 100.0,
+        "coverage_n_core_cells": 1008,
+        "coverage_n_core_unreachable": 0,
+        "coverage_core_coverage_enforced": true,
+        "coverage_proven_optimal": true,
+        "coverage_solver_gap": null,
+        "coverage_feasible": true
+      },
+      {
+        "name": "coverage_priority",
+        "status": "Optimal",
+        "n_sites": 10,
+        "objective": 10.0,
+        "total_cost_cny": 544668671.0,
+        "solve_time_s": 0.54,
+        "coverage_cells_covered": 2134,
+        "coverage_cells_total": 2519,
+        "coverage_cell_coverage_pct": 84.7162,
+        "coverage_demand_covered": 48682.0555,
+        "coverage_demand_total": 50338.9149,
+        "coverage_demand_coverage_pct": 96.7086,
+        "coverage_population_covered": 7439711.0956,
+        "coverage_population_total": 7712263.1572,
+        "coverage_population_coverage_pct": 96.466,
+        "coverage_core_coverage_pct": 100.0,
+        "coverage_n_core_cells": 1008,
+        "coverage_n_core_unreachable": 0,
+        "coverage_core_coverage_enforced": true,
+        "coverage_proven_optimal": true,
+        "coverage_solver_gap": null,
+        "coverage_feasible": true
+      }
+    ]
+  },
+  "stage4": {
+    "n_pareto": 200,
+    "n_evaluations": 47295,
+    "final_hypervolume": 521869671.5159939,
+    "memo_size": 19422
+  },
+  "pareto_metrics_range": {
+    "demand_coverage_pct": [
+      96.12796372129499,
+      99.98949093582914
+    ],
+    "total_cost_cny": [
+      314333127.3849533,
+      20012524841.913223
+    ],
+    "mean_access_time_min": [
+      5.324556350708008,
+      9.887457847595215
+    ],
+    "worst_group_access_time_min": [
+      5.905288493770649,
+      10.452272934732735
+    ],
+    "equity_gini": [
+      0.00291228063680356,
+      0.05033450181850004
+    ]
+  }
+}

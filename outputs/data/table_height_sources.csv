@@ -1,0 +1,5 @@
+height_source,count,share_pct,height_mean_m,height_median_m,height_std_m
+raster_height,49323,70.46,19.44,18.65,5.25
+imputed,14740,21.06,18.42,18.6,1.34
+osm_levels,5100,7.29,29.66,14.1,34.6
+osm_height,843,1.2,34.44,20.0,47.47

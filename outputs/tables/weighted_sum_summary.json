@@ -1,0 +1,18 @@
+{
+  "n_weight_directions": 16,
+  "pop_size": 100,
+  "n_gen_both_arms": 100,
+  "nsga2_max_evaluations": 6236,
+  "ws_mean_evaluations": 1373.625,
+  "budget_aligned": true,
+  "vs_union_front": {
+    "mean_dominated_pct": 0.6944444444444444,
+    "fraction_with_any_dominating": 0.625,
+    "reference_front_size": 342
+  },
+  "vs_single_run_front": {
+    "mean_dominated_pct": 0.0,
+    "fraction_with_any_dominating": 0.0,
+    "reference_front_size": 100
+  }
+}
